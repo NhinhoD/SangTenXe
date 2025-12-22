@@ -23,6 +23,17 @@
       .reveal-up { transform: translateY(40px); }
       .wave-animation { animation: waveMove 15s linear infinite; }
       @keyframes waveMove { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+      
+      .wave-animation-slow { animation: waveMove 25s linear infinite; }
+      .wave-animation-fast { animation: waveMove 10s linear infinite; }
+      @keyframes tada {
+        0% { transform: scale(1); }
+        10%, 20% { transform: scale(0.9) rotate(-3deg); }
+        30%, 50%, 70%, 90% { transform: scale(1.1) rotate(3deg); }
+        40%, 60%, 80% { transform: scale(1.1) rotate(-3deg); }
+        100% { transform: scale(1) rotate(0); }
+      }
+      .animate-tada { animation: tada 1s infinite; }
     </style>
 
     <script type="importmap">
@@ -41,7 +52,7 @@
   </head>
   <body>
     <div id="root"></div>
-    <!-- Sử dụng type="text/babel" và data-type="module" để Babel xử lý JSX -->
+    <!-- Babel xử lý index.tsx như một Module -->
     <script type="text/babel" data-type="module" src="index.tsx"></script>
   </body>
 </html>
