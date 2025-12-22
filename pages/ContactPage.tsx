@@ -1,9 +1,13 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Phone, Mail, MapPin, Clock, Send, ShieldCheck } from 'lucide-react';
 import { COMPANY_ADDRESS, COMPANY_EMAIL, COMPANY_PHONE } from '../constants';
 
 const ContactPage: React.FC = () => {
+  useEffect(() => {
+    document.title = "Liên Hệ Tư Vấn Dịch Vụ Sang Tên Xe 24/7 - SangTenXe24h";
+  }, []);
+
   return (
     <div className="bg-white">
       <div className="bg-slate-50 py-16 border-b border-gray-200">
@@ -135,11 +139,12 @@ const ContactPage: React.FC = () => {
               </div>
               
               <button 
-                className="w-full bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-600 hover:to-blue-700 text-white font-bold py-4 rounded-2xl focus:outline-none transition duration-300 flex items-center justify-center gap-3 shadow-xl shadow-sky-100 group" 
+                className="w-full relative overflow-hidden bg-gradient-to-r from-sky-500 via-blue-600 to-indigo-600 text-white font-black py-5 rounded-2xl focus:outline-none transition-all duration-300 flex items-center justify-center gap-3 shadow-xl shadow-sky-500/20 hover:shadow-indigo-500/40 hover:scale-[1.02] active:scale-[0.98] group" 
                 type="submit"
               >
-                <Send size={20} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" /> 
-                GỬI YÊU CẦU NGAY
+                <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
+                <Send size={22} className="group-hover:translate-x-2 group-hover:-translate-y-2 transition-transform duration-500 ease-out" /> 
+                <span className="relative z-10 tracking-widest uppercase">GỬI YÊU CẦU NGAY</span>
               </button>
               
               <p className="text-center text-[10px] text-slate-400 mt-4 px-4 uppercase font-bold tracking-widest">

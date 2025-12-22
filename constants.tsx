@@ -1,7 +1,7 @@
 import { Car, FileText, Repeat, ShieldCheck, Truck, ClipboardList, PenTool } from 'lucide-react';
 import { ServiceItem, NavItem, BlogPost, FaqItem } from './types';
 
-export const COMPANY_PHONE = "0867 678 339";
+export const COMPANY_PHONE = "0123 456 789";
 export const COMPANY_EMAIL = "contact@[ten-mien-cua-ban].com";
 export const COMPANY_ADDRESS = "[Số nhà], [Tên đường], Quận/Huyện, TP. Hồ Chí Minh";
 

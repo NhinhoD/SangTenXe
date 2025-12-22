@@ -1,9 +1,13 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Shield, Users, Award } from 'lucide-react';
 import Reveal from '../components/Reveal';
 
 const About: React.FC = () => {
+  useEffect(() => {
+    document.title = "Giới Thiệu Về SangTenXe24h - Chuyên Gia Giấy Tờ Xe Uy Tín";
+  }, []);
+
   return (
     <div className="bg-white overflow-x-hidden">
       {/* Banner */}

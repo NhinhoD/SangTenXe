@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Shield, Clock, DollarSign } from 'lucide-react';
 import { SERVICES, COMPANY_PHONE } from '../constants';
@@ -7,6 +7,10 @@ import ServiceCard from '../components/ServiceCard';
 import Reveal from '../components/Reveal';
 
 const Home: React.FC = () => {
+  useEffect(() => {
+    document.title = "SangTenXe24h - Dịch Vụ Sang Tên Xe Ô Tô, Xe Máy Uy Tín 24/7";
+  }, []);
+
   return (
     <div className="bg-white font-sans overflow-x-hidden">
       

@@ -1,9 +1,14 @@
-import React from 'react';
+
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Calendar, User, ArrowRight, Search } from 'lucide-react';
 import { BLOG_POSTS } from '../constants';
 
 const Blog: React.FC = () => {
+  useEffect(() => {
+    document.title = "Blog Kiến Thức & Thủ Tục Pháp Luật Xe - SangTenXe24h";
+  }, []);
+
   return (
     <div className="bg-gray-50 min-h-screen">
       {/* Header */}

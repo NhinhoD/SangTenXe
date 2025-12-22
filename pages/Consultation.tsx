@@ -1,10 +1,14 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ChevronDown, ChevronUp, MessageCircle, FileQuestion, HelpCircle } from 'lucide-react';
 import { FAQ_ITEMS, COMPANY_PHONE } from '../constants';
 
 const Consultation: React.FC = () => {
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
+
+  useEffect(() => {
+    document.title = "Tư Vấn & Hỏi Đáp Thủ Tục Giấy Tờ Xe - SangTenXe24h";
+  }, []);
 
   const toggleFaq = (index: number) => {
     setOpenFaqIndex(openFaqIndex === index ? null : index);
