@@ -1,8 +1,8 @@
 
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Shield, Clock, DollarSign } from 'lucide-react';
-import { SERVICES, COMPANY_PHONE } from '../constants';
+import { Shield, Clock, DollarSign, MapPin, Phone, Send, Map as MapIcon } from 'lucide-react';
+import { SERVICES, COMPANY_PHONE, COMPANY_ADDRESS } from '../constants';
 import ServiceCard from '../components/ServiceCard';
 import Reveal from '../components/Reveal';
 
@@ -10,6 +10,9 @@ const Home: React.FC = () => {
   useEffect(() => {
     document.title = "SangTenXe24h - Dịch Vụ Sang Tên Xe Ô Tô, Xe Máy Uy Tín 24/7 tại TP.HCM";
   }, []);
+
+  // Sử dụng URL nhúng tìm kiếm để đảm bảo hiển thị DẤU GHIM ĐỎ (Marker) tại địa chỉ chính xác
+  const mapEmbedUrl = "https://maps.google.com/maps?q=288H%20N%C6%A1%20Trang%20Long,%20B%C3%ACnh%20Th%E1%BA%A1nh,%20H%E1%BB%93%20Ch%C3%AD%20Minh&t=&z=17&ie=UTF8&iwloc=&output=embed";
 
   return (
     <div className="bg-white font-sans overflow-x-hidden">
@@ -54,7 +57,6 @@ const Home: React.FC = () => {
           </div>
         </div>
         
-        {/* Soft Animated Wave Transition */}
         <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none z-20">
           <div className="relative w-[200%] h-[120px] md:h-[180px]">
             <svg className="absolute bottom-0 left-0 w-full h-full wave-animation-slow opacity-20" viewBox="0 0 1200 120" preserveAspectRatio="none">
@@ -129,6 +131,70 @@ const Home: React.FC = () => {
                 <ServiceCard service={service} />
               </Reveal>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Quick Contact & Map Section on Home */}
+      <section className="py-24 bg-slate-50 border-t border-gray-100">
+        <div className="container mx-auto px-4">
+          <div className="bg-white rounded-[3rem] shadow-2xl overflow-hidden flex flex-col lg:flex-row border border-gray-100">
+            {/* Left: Contact Info & Mini Form */}
+            <div className="lg:w-1/2 p-8 md:p-12 lg:p-16">
+              <Reveal>
+                <h2 className="text-sky-500 font-bold uppercase tracking-widest text-sm mb-3">Liên hệ văn phòng</h2>
+                <h3 className="text-3xl md:text-4xl font-black text-slate-800 mb-8 leading-tight">Tìm Chúng Tôi Tại Bình Thạnh</h3>
+                
+                <div className="space-y-6 mb-10">
+                  <div className="flex items-center gap-5">
+                    <div className="w-12 h-12 bg-sky-50 rounded-xl flex items-center justify-center text-sky-600 shrink-0">
+                      <MapPin size={24} />
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-slate-800">Địa chỉ chính</h4>
+                      <p className="text-slate-500 text-sm">{COMPANY_ADDRESS}</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-5">
+                    <div className="w-12 h-12 bg-sky-50 rounded-xl flex items-center justify-center text-sky-600 shrink-0">
+                      <Phone size={24} />
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-slate-800">Hotline tư vấn</h4>
+                      <p className="text-sky-600 text-xl font-black">{COMPANY_PHONE}</p>
+                    </div>
+                  </div>
+                </div>
+
+                <form onSubmit={(e) => e.preventDefault()} className="space-y-4">
+                  <input type="tel" placeholder="Nhập SĐT để nhận báo giá nhanh" className="w-full bg-slate-50 border border-slate-200 rounded-2xl py-4 px-6 focus:outline-none focus:border-sky-500 transition shadow-sm" />
+                  <button className="w-full bg-sky-600 hover:bg-sky-700 text-white font-bold py-4 rounded-2xl flex items-center justify-center gap-2 shadow-lg transition-all group">
+                    Gửi yêu cầu <Send size={18} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                  </button>
+                </form>
+              </Reveal>
+            </div>
+            
+            {/* Right: Map Integration with Marker Pin */}
+            <div className="lg:w-1/2 h-[400px] lg:h-auto min-h-[400px] bg-slate-100 relative group">
+              <div className="absolute top-6 right-6 z-10">
+                <a 
+                  href="https://maps.app.goo.gl/TirK5G6C877rXwE46" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="bg-white/90 backdrop-blur-sm text-slate-800 font-bold py-2 px-4 rounded-xl shadow-xl flex items-center gap-2 hover:bg-white transition-all text-sm"
+                >
+                  <MapIcon size={16} /> Xem bản đồ lớn
+                </a>
+              </div>
+              <iframe 
+                src={mapEmbedUrl}
+                className="absolute inset-0 w-full h-full border-0 transition-all duration-700"
+                allowFullScreen={true}
+                loading="lazy" 
+                title="Bản đồ văn phòng SangTenXe24h"
+              ></iframe>
+            </div>
           </div>
         </div>
       </section>

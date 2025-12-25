@@ -2,9 +2,9 @@
 import { Car, FileText, Repeat, ShieldCheck, Truck, ClipboardList, PenTool } from 'lucide-react';
 import { ServiceItem, NavItem, BlogPost, FaqItem } from './types';
 
-export const COMPANY_PHONE = "0123 456 789";
-export const COMPANY_EMAIL = "contact@sangtenxe24h.com";
-export const COMPANY_ADDRESS = "[Số nhà], [Tên đường], Quận/Huyện, TP. Hồ Chí Minh";
+export const COMPANY_PHONE = "0373 823 874";
+export const COMPANY_EMAIL = "sangtenxe24.com";
+export const COMPANY_ADDRESS = "288H Nơ Trang Long, Phường Bình Thạnh, TP. Hồ Chí Minh";
 
 export const NAV_ITEMS: NavItem[] = [
   { label: "Trang chủ", path: "/" },

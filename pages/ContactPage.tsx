@@ -1,12 +1,15 @@
 
 import React, { useEffect } from 'react';
-import { Phone, Mail, MapPin, Clock, Send, ShieldCheck } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, Send, ShieldCheck, Map as MapIcon, ExternalLink } from 'lucide-react';
 import { COMPANY_ADDRESS, COMPANY_EMAIL, COMPANY_PHONE } from '../constants';
 
 const ContactPage: React.FC = () => {
   useEffect(() => {
     document.title = "Liên Hệ Tư Vấn Dịch Vụ Sang Tên Xe 24/7 - SangTenXe24h";
   }, []);
+
+  // URL nhúng tìm kiếm đảm bảo ghim đúng địa chỉ với DẤU GHIM ĐỎ
+  const mapEmbedUrl = "https://maps.google.com/maps?q=288H%20N%C6%A1%20Trang%20Long,%20B%C3%ACnh%20Th%E1%BA%A1nh,%20H%E1%BB%93%20Ch%C3%AD%20Minh&t=&z=17&ie=UTF8&iwloc=&output=embed";
 
   return (
     <div className="bg-white">
@@ -155,24 +158,40 @@ const ContactPage: React.FC = () => {
         </div>
       </div>
       
-      {/* Visual Map Area */}
-      <div className="w-full h-[450px] bg-slate-100 relative group overflow-hidden border-t border-gray-100">
-         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?q=80&w=2066&auto=format&fit=crop')] bg-cover bg-center opacity-40 grayscale group-hover:grayscale-0 transition duration-1000"></div>
-         <div className="absolute inset-0 bg-sky-900/10 group-hover:bg-transparent transition duration-500"></div>
-         
-         <div className="container mx-auto px-4 h-full flex items-center justify-center relative z-10">
-            <div className="bg-white/95 backdrop-blur-sm p-8 rounded-[2rem] shadow-2xl border border-white text-center max-w-md transform transition-all group-hover:scale-105 duration-500">
-                <div className="w-16 h-16 bg-sky-500 text-white rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg shadow-sky-200">
-                    <MapPin size={32} className="animate-bounce" />
-                </div>
-                <h3 className="font-black text-xl text-slate-800 mb-2">Văn Phòng SangTenXe24h</h3>
-                <p className="text-slate-600 mb-4">{COMPANY_ADDRESS}</p>
-                <div className="flex gap-3 justify-center">
-                    <a href="#" className="bg-sky-600 text-white px-5 py-2 rounded-full text-sm font-bold shadow-md hover:bg-sky-700 transition">Chỉ đường</a>
-                    <a href={`tel:${COMPANY_PHONE.replace(/\s/g, '')}`} className="bg-slate-100 text-slate-700 px-5 py-2 rounded-full text-sm font-bold hover:bg-slate-200 transition">Gửi Zalo</a>
-                </div>
+      {/* Optimized Map Area with Red Marker Pin */}
+      <div className="container mx-auto px-4 pb-20">
+        <div className="bg-white rounded-[2.5rem] shadow-2xl border border-gray-100 overflow-hidden relative group">
+          <div className="p-8 border-b border-gray-50 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div className="flex items-center gap-4">
+              <div className="w-12 h-12 bg-sky-500 text-white rounded-xl flex items-center justify-center shadow-lg shadow-sky-200">
+                <MapIcon size={24} />
+              </div>
+              <div>
+                <h3 className="font-black text-xl text-slate-800">Bản đồ văn phòng</h3>
+                <p className="text-slate-500 text-sm">{COMPANY_ADDRESS}</p>
+              </div>
             </div>
-         </div>
+            <a 
+              href="https://maps.app.goo.gl/TirK5G6C877rXwE46" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 bg-sky-600 hover:bg-sky-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition-all hover:-translate-y-1"
+            >
+              <ExternalLink size={18} /> Mở Google Maps
+            </a>
+          </div>
+          
+          <div className="w-full h-[500px] bg-slate-100 relative">
+            <iframe 
+              src={mapEmbedUrl}
+              className="absolute inset-0 w-full h-full border-0 transition-all duration-1000"
+              allowFullScreen={true}
+              loading="lazy" 
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Vị trí SangTenXe24h trên bản đồ"
+            ></iframe>
+          </div>
+        </div>
       </div>
     </div>
   );
