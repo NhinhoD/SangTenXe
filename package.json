@@ -2,8 +2,8 @@
   "name": "sangtenxe24h",
   "version": "1.0.0",
   "private": true,
-  "dependencies": {},
   "scripts": {
-    "build": "echo 'No build required'"
+    "start": "echo 'App is running without build step'",
+    "build": "echo 'No build step required'"
   }
 }
