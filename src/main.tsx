@@ -10,6 +10,4 @@ if (container) {
       <App />
     </React.StrictMode>
   );
-} else {
-  console.error("Không tìm thấy phần tử root để render ứng dụng.");
 }

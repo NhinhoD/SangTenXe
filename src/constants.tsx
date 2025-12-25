@@ -1,5 +1,5 @@
 import { Car, FileText, Repeat, ShieldCheck, Truck, PenTool, Bike, Search, Landmark } from 'lucide-react';
-import { ServiceItem, NavItem, BlogPost, FaqItem } from './types.ts';
+import { ServiceItem, NavItem, BlogPost, FaqItem } from './types';
 
 export const COMPANY_PHONE = "0867 678 339";
 export const COMPANY_EMAIL = "hotro@sangtenxe24h.vn";
@@ -42,7 +42,7 @@ export const SERVICES: ServiceItem[] = [
   {
     id: "cap-doi",
     title: "Làm lại Cà vẹt / Đăng ký xe",
-    description: "Bị mất cà vẹt, cà vẹt cũ nát, sai thông tin? Chúng tôi giúp bạn cấp lại đăng ký xe chính chủ nhanh chóng, đúng pháp luật.",
+    description: "B bị mất cà vẹt, cà vẹt cũ nát, sai thông tin? Chúng tôi giúp bạn cấp lại đăng ký xe chính chủ nhanh chóng, đúng pháp luật.",
     image: "https://images.unsplash.com/photo-1632833239869-a37e3a5806d2?auto=format&fit=crop&q=80&w=800",
     icon: Repeat
   },
