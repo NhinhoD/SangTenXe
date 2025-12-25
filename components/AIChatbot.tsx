@@ -22,21 +22,14 @@ const AIChatbot: React.FC = () => {
   const handleSend = async () => {
     if (!input.trim() || isLoading) return;
 
-    // Lấy API Key an toàn
-    const apiKey = (window as any).process?.env?.API_KEY || "";
-    if (!apiKey) {
-      setMessages(prev => [...prev, { role: 'user', text: input.trim() }, { role: 'bot', text: "Hệ thống AI đang bảo trì. Vui lòng gọi Hotline để được tư vấn ngay!" }]);
-      setInput('');
-      return;
-    }
-
     const userMessage = input.trim();
     setInput('');
     setMessages(prev => [...prev, { role: 'user', text: userMessage }]);
     setIsLoading(true);
 
     try {
-      const ai = new GoogleGenAI({ apiKey });
+      // Always use process.env.API_KEY directly as per guidelines
+      const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
       const response = await ai.models.generateContent({
         model: 'gemini-3-flash-preview',
         contents: userMessage,
@@ -50,7 +43,7 @@ const AIChatbot: React.FC = () => {
       const botResponse = response.text || "Xin lỗi, tôi gặp chút trục trặc.";
       setMessages(prev => [...prev, { role: 'bot', text: botResponse }]);
     } catch (error) {
-      setMessages(prev => [...prev, { role: 'bot', text: "Vui lòng liên hệ Hotline/Zalo để được hỗ trợ trực tiếp!" }]);
+      setMessages(prev => [...prev, { role: 'bot', text: "Hệ thống tư vấn đang bận, vui lòng liên hệ Hotline/Zalo để được hỗ trợ nhanh nhất!" }]);
     } finally {
       setIsLoading(false);
     }

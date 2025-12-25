@@ -1,29 +1,5 @@
 
 {
-  "headers": [
-    {
-      "source": "/(.*)\\.tsx",
-      "headers": [
-        {
-          "key": "Content-Type",
-          "value": "application/javascript; charset=utf-8"
-        },
-        {
-          "key": "Cache-Control",
-          "value": "no-store, no-cache, must-revalidate, proxy-revalidate"
-        }
-      ]
-    },
-    {
-      "source": "/(.*)\\.ts",
-      "headers": [
-        {
-          "key": "Content-Type",
-          "value": "application/javascript; charset=utf-8"
-        }
-      ]
-    }
-  ],
   "rewrites": [
     {
       "source": "/((?!api/|.*\\.).*)",
