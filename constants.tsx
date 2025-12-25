@@ -3,7 +3,7 @@ import { Car, FileText, Repeat, ShieldCheck, Truck, ClipboardList, PenTool } fro
 import { ServiceItem, NavItem, BlogPost, FaqItem } from './types';
 
 export const COMPANY_PHONE = "0373 823 874";
-export const COMPANY_EMAIL = "sangtenxe24.com";
+export const COMPANY_EMAIL = "sangtenxe24@gmail.com";
 export const COMPANY_ADDRESS = "288H Nơ Trang Long, Phường Bình Thạnh, TP. Hồ Chí Minh";
 
 export const NAV_ITEMS: NavItem[] = [
