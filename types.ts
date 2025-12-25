@@ -1,3 +1,4 @@
+
 import { LucideIcon } from "lucide-react";
 
 export interface ServiceItem {
@@ -7,6 +8,7 @@ export interface ServiceItem {
   image: string;
   icon?: LucideIcon;
   price?: string;
+  category?: 'car' | 'moto' | 'all';
 }
 
 export interface NavItem {
@@ -21,6 +23,7 @@ export interface BlogPost {
   summary: string;
   image: string;
   date: string;
+  author?: string;
 }
 
 export interface FaqItem {

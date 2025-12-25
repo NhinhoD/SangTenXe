@@ -48,20 +48,22 @@ const AppContent: React.FC = () => {
         </Routes>
       </main>
       <Footer />
-      <div className="fixed bottom-6 right-6 z-40 md:hidden flex flex-col gap-3">
+      
+      {/* Nút liên hệ cố định */}
+      <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-3">
          <a 
           href={`https://zalo.me/${cleanPhone}`} 
           target="_blank" 
           rel="noopener noreferrer"
-          className="w-14 h-14 bg-blue-600 rounded-full flex items-center justify-center shadow-lg shadow-blue-600/40 text-white font-bold text-xs border-2 border-white hover:scale-110 transition"
+          className="w-14 h-14 bg-blue-600 rounded-full flex items-center justify-center shadow-2xl text-white font-bold text-xs border-2 border-white hover:scale-110 transition-all hover:bg-blue-700"
          >
            Zalo
          </a>
          <a 
           href={`tel:${cleanPhone}`} 
-          className="w-14 h-14 bg-green-500 rounded-full flex items-center justify-center shadow-lg shadow-green-500/40 text-white border-2 border-white animate-bounce"
+          className="w-14 h-14 bg-green-500 rounded-full flex items-center justify-center shadow-2xl text-white border-2 border-white animate-pulse hover:scale-110 transition-all"
          >
-           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
          </a>
       </div>
     </div>
