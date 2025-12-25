@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { HashRouter as Router, Routes, Route, useLocation, Navigate, useNavigate } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route, useLocation, Navigate } from 'react-router-dom';
 import Header from './components/Header.tsx';
 import Footer from './components/Footer.tsx';
 import Home from './pages/Home.tsx';
@@ -20,15 +20,7 @@ const ScrollToTop = () => {
 };
 
 const AppContent: React.FC = () => {
-  const navigate = useNavigate();
   const cleanPhone = COMPANY_PHONE.replace(/\s/g, '');
-
-  useEffect(() => {
-    const params = new URLSearchParams(window.location.search);
-    if (params.has('appParams')) {
-      navigate('/', { replace: true });
-    }
-  }, [navigate]);
 
   return (
     <div className="flex flex-col min-h-screen font-sans text-slate-800 bg-white">
