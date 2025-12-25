@@ -11,5 +11,5 @@ if (container) {
     </React.StrictMode>
   );
 } else {
-  console.error("Không tìm thấy phần tử root để render ứng dụng.");
+  console.error("Không tìm thấy phần tử root.");
 }

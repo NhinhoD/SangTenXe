@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>SangTenXe24h - Dịch Vụ Sang Tên Xe Uy Tín</title>
     
+    <!-- Babel for TSX support -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -40,5 +42,7 @@
   </head>
   <body>
     <div id="root"></div>
+    <!-- Load index.tsx directly as a module -->
+    <script type="text/babel" data-type="module" src="./index.tsx"></script>
   </body>
 </html>
