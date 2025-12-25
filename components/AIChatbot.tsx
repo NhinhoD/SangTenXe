@@ -22,33 +22,35 @@ const AIChatbot: React.FC = () => {
   const handleSend = async () => {
     if (!input.trim() || isLoading) return;
 
+    // Lấy API Key an toàn
+    const apiKey = (window as any).process?.env?.API_KEY || "";
+    if (!apiKey) {
+      setMessages(prev => [...prev, { role: 'user', text: input.trim() }, { role: 'bot', text: "Hệ thống AI đang bảo trì. Vui lòng gọi Hotline để được tư vấn ngay!" }]);
+      setInput('');
+      return;
+    }
+
     const userMessage = input.trim();
     setInput('');
     setMessages(prev => [...prev, { role: 'user', text: userMessage }]);
     setIsLoading(true);
 
     try {
-      // Khởi tạo AI với key từ biến môi trường trực tiếp theo hướng dẫn của SDK
-      const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+      const ai = new GoogleGenAI({ apiKey });
       const response = await ai.models.generateContent({
         model: 'gemini-3-flash-preview',
         contents: userMessage,
         config: {
           systemInstruction: `Bạn là trợ lý ảo của "SangTenXe24h". 
           Tư vấn về: Sang tên xe, Rút hồ sơ, Cà số máy, Làm lại cà vẹt.
-          Quy tắc:
-          1. Lịch sự, chuyên nghiệp.
-          2. Ngắn gọn, chính xác theo luật 2024-2025.
-          3. Mời khách gọi ${COMPANY_PHONE} nếu cần báo giá chi tiết.
-          4. Ngôn ngữ: Tiếng Việt.`,
+          Quy tắc: Ngắn gọn, mời khách gọi ${COMPANY_PHONE}.`,
         },
       });
 
-      // Truy cập trực tiếp thuộc tính .text của GenerateContentResponse
-      const botResponse = response.text || "Xin lỗi, tôi gặp chút trục trặc. Bạn vui lòng gọi hotline nhé!";
+      const botResponse = response.text || "Xin lỗi, tôi gặp chút trục trặc.";
       setMessages(prev => [...prev, { role: 'bot', text: botResponse }]);
     } catch (error) {
-      setMessages(prev => [...prev, { role: 'bot', text: "Tôi đang bận một chút, vui lòng liên hệ Zalo/Hotline để được hỗ trợ ngay!" }]);
+      setMessages(prev => [...prev, { role: 'bot', text: "Vui lòng liên hệ Hotline/Zalo để được hỗ trợ trực tiếp!" }]);
     } finally {
       setIsLoading(false);
     }
@@ -64,7 +66,7 @@ const AIChatbot: React.FC = () => {
               <div>
                 <h4 className="font-bold text-sm">Trợ Lý SangTenXe24h</h4>
                 <span className="text-[10px] opacity-80 uppercase font-bold flex items-center gap-1">
-                  <span className="w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse"></span> Trực tuyến
+                  <span className="w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse"></span> Online
                 </span>
               </div>
             </div>
@@ -99,7 +101,7 @@ const AIChatbot: React.FC = () => {
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 onKeyDown={(e) => e.key === 'Enter' && handleSend()}
-                placeholder="Nhập câu hỏi của bạn..."
+                placeholder="Hỏi về thủ tục xe..."
                 className="flex-grow bg-slate-100 rounded-full px-4 py-2 text-sm focus:ring-2 focus:ring-sky-500 outline-none"
               />
               <button onClick={handleSend} className="w-10 h-10 bg-sky-600 text-white rounded-full flex items-center justify-center shadow-lg">

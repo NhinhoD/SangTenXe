@@ -4,17 +4,18 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    
-    <!-- SEO Cơ bản -->
     <title>SangTenXe24h - Dịch Vụ Sang Tên Xe Ô Tô, Xe Máy Uy Tín 24/7</title>
     <meta name="description" content="Dịch vụ sang tên xe chuyên nghiệp tại TP.HCM. Chuyên rút hồ sơ gốc, sang tên đổi chủ, làm lại cà vẹt, biển số xe ô tô, xe máy nhanh gọn, giá rẻ, uy tín." />
     
-    <!-- Shim cho process.env để tránh lỗi crash trên trình duyệt -->
+    <!-- FIX: Khởi tạo biến process giả lập để không bị lỗi ReferenceError -->
     <script>
-      window.process = window.process || { env: { API_KEY: "" } };
+      window.process = {
+        env: {
+          API_KEY: "" // Sẽ được inject qua script tiếp theo nếu cần hoặc lấy trực tiếp từ biến môi trường của Vercel nếu có cơ chế khác
+        }
+      };
     </script>
 
-    <!-- Thư viện hỗ trợ chạy React trực tiếp -->
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -26,10 +27,6 @@
       .reveal { opacity: 0; transition: all 0.8s ease-out; }
       .reveal.active { opacity: 1; transform: none !important; }
       .reveal-up { transform: translateY(40px); }
-      .wave-animation { animation: waveMove 15s linear infinite; }
-      @keyframes waveMove { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
-      .wave-animation-slow { animation: waveMove 25s linear infinite; }
-      .wave-animation-fast { animation: waveMove 10s linear infinite; }
       @keyframes tada {
         0% { transform: scale(1); }
         10%, 20% { transform: scale(0.9) rotate(-3deg); }
@@ -40,6 +37,7 @@
       .animate-tada { animation: tada 1s infinite; }
     </style>
 
+    <!-- FIX: Importmap tối giản và chính xác cho môi trường trình duyệt -->
     <script type="importmap">
 {
   "imports": {
@@ -61,7 +59,7 @@
   </head>
   <body>
     <div id="root"></div>
-    <!-- Babel xử lý index.tsx như một Module -->
+    <!-- Babel sẽ xử lý file index.tsx và các dependencies của nó -->
     <script type="text/babel" data-type="module" src="index.tsx"></script>
   </body>
 </html>
