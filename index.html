@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="vi">
   <head>
@@ -8,7 +9,12 @@
     <title>SangTenXe24h - Dịch Vụ Sang Tên Xe Ô Tô, Xe Máy Uy Tín 24/7</title>
     <meta name="description" content="Dịch vụ sang tên xe chuyên nghiệp tại TP.HCM. Chuyên rút hồ sơ gốc, sang tên đổi chủ, làm lại cà vẹt, biển số xe ô tô, xe máy nhanh gọn, giá rẻ, uy tín." />
     
-    <!-- Babel để biên dịch JSX trên trình duyệt -->
+    <!-- Shim cho process.env để tránh lỗi crash trên trình duyệt -->
+    <script>
+      window.process = window.process || { env: { API_KEY: "" } };
+    </script>
+
+    <!-- Thư viện hỗ trợ chạy React trực tiếp -->
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -22,7 +28,6 @@
       .reveal-up { transform: translateY(40px); }
       .wave-animation { animation: waveMove 15s linear infinite; }
       @keyframes waveMove { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
-      
       .wave-animation-slow { animation: waveMove 25s linear infinite; }
       .wave-animation-fast { animation: waveMove 10s linear infinite; }
       @keyframes tada {
@@ -43,9 +48,11 @@
     "react-dom/client": "https://esm.sh/react-dom@19.0.0/client",
     "react-router-dom": "https://esm.sh/react-router-dom@7.1.5?external=react,react-dom",
     "lucide-react": "https://esm.sh/lucide-react@0.460.0?external=react",
+    "@google/genai": "https://esm.sh/@google/genai@1.29.1",
     "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
     "react/": "https://esm.sh/react@^19.2.3/",
     "path": "https://esm.sh/path@^0.12.7",
+    "url": "https://esm.sh/url@^0.11.4",
     "vite": "https://esm.sh/vite@^7.3.0",
     "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2"
   }

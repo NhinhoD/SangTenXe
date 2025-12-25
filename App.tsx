@@ -9,6 +9,7 @@ import ContactPage from './pages/ContactPage.tsx';
 import About from './pages/About.tsx';
 import Consultation from './pages/Consultation.tsx';
 import Blog from './pages/Blog.tsx';
+import AIChatbot from './components/AIChatbot.tsx';
 import { COMPANY_PHONE } from './constants.tsx';
 
 const ScrollToTop = () => {
@@ -48,6 +49,8 @@ const AppContent: React.FC = () => {
         </Routes>
       </main>
       <Footer />
+      {/* Thêm chatbot vào layout chính */}
+      <AIChatbot />
       <div className="fixed bottom-6 right-6 z-40 md:hidden flex flex-col gap-3">
          <a 
           href={`https://zalo.me/${cleanPhone}`} 
