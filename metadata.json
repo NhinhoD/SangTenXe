@@ -1,5 +1,8 @@
 {
   "name": "SangTenXe24h - Dịch Vụ Sang Tên Xe Chuyên Nghiệp",
-  "description": "Dịch vụ sang tên đổi chủ, rút hồ sơ gốc ô tô và xe máy chuyên nghiệp, uy tín 24/7.",
-  "requestFramePermissions": []
+  "description": "Website cung cấp dịch vụ pháp lý xe cơ giới, sang tên, rút hồ sơ gốc uy tín toàn quốc 24/7.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
 }

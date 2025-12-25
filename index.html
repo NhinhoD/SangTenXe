@@ -1,48 +1,37 @@
 <!DOCTYPE html>
 <html lang="vi">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>SangTenXe24h - Dịch Vụ Sang Tên Xe Chuyên Nghiệp</title>
-    
-    <!-- Babel standalone for in-browser JSX transpilation -->
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-    <!-- Tailwind CSS -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SangTenXe24h - Dịch Vụ Sang Tên Xe Uy Tín 24/7</title>
+    <meta name="description" content="Dịch vụ sang tên xe ô tô, xe máy, rút hồ sơ gốc nhanh gọn, uy tín toàn quốc.">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
-    
     <style>
-      body { font-family: 'Plus Jakarta Sans', sans-serif; margin: 0; padding: 0; background-color: #f8fafc; }
-      .reveal { opacity: 0; transition: all 0.8s ease-out; }
-      .reveal.active { opacity: 1; transform: none !important; }
-      .reveal-up { transform: translateY(20px); }
-      @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-      .animate-fade-up { animation: fadeInUp 0.6s ease-out forwards; }
-      
-      .wave-animation-slow { animation: waveMove 20s linear infinite; }
-      .wave-animation { animation: waveMove 15s linear infinite; }
-      .wave-animation-fast { animation: waveMove 10s linear infinite; }
-      @keyframes waveMove { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .reveal { opacity: 0; transform: translateY(20px); transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        .glass { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255, 255, 255, 0.2); }
+        @keyframes wave { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+        .animate-wave { animation: wave 20s linear infinite; }
     </style>
-
     <script type="importmap">
 {
   "imports": {
-    "react": "https://esm.sh/react@19.0.0",
-    "react-dom": "https://esm.sh/react-dom@19.0.0",
-    "react-dom/client": "https://esm.sh/react-dom@19.0.0/client",
-    "react-router-dom": "https://esm.sh/react-router-dom@6.28.0?external=react,react-dom",
-    "lucide-react": "https://esm.sh/lucide-react@0.460.0?external=react",
-    "@google/genai": "https://esm.sh/@google/genai@1.34.0",
+    "@google/genai": "https://esm.sh/@google/genai@^1.34.0",
+    "lucide-react": "https://esm.sh/lucide-react@^0.475.0",
+    "react": "https://esm.sh/react@^19.0.0",
+    "react-dom": "https://esm.sh/react-dom@^19.0.0",
+    "react-dom/client": "https://esm.sh/react-dom@^19.0.0/client",
+    "react-router-dom": "https://esm.sh/react-router-dom@^7.1.0",
     "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
     "react/": "https://esm.sh/react@^19.2.3/"
   }
 }
 </script>
-  </head>
-  <body>
+</head>
+<body class="bg-slate-50 text-slate-900">
     <div id="root"></div>
-    <!-- Điểm mấu chốt: Load index.tsx từ thư mục gốc -->
-    <script type="text/babel" data-type="module" src="./index.tsx"></script>
-  </body>
+</body>
 </html>

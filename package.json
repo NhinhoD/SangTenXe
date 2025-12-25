@@ -1,10 +1,8 @@
 {
-  "name": "sangtenxe24h",
+  "name": "sangtenxe24h-vanilla",
   "version": "1.0.0",
-  "private": true,
-  "description": "Dịch vụ sang tên xe chuyên nghiệp",
+  "description": "Dịch vụ sang tên xe thuần HTML/JS",
   "scripts": {
-    "start": "echo 'Running without build step'",
-    "build": "echo 'No build required'"
+    "start": "echo 'No build required'"
   }
 }

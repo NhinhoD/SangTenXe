@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi Tiết Dịch Vụ - SangTenXe24h</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="bg-white">
+    <header id="main-header"></header>
+    
+    <div id="service-detail-content">
+        <!-- Content injected by JS -->
+    </div>
+
+    <div id="ai-chatbot-root"></div>
+    <div class="fixed bottom-24 right-6 z-50 flex flex-col gap-3" id="floating-actions"></div>
+    <footer id="main-footer"></footer>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const id = params.get('id');
+        const service = SERVICES.find(s => s.id === id);
+
+        if (service) {
+            document.title = service.title + " - SangTenXe24h";
+            document.getElementById('service-detail-content').innerHTML = `
+                <div class="bg-slate-900 py-20 text-white text-center">
+                    <h1 class="text-3xl md:text-5xl font-black px-4">${service.title}</h1>
+                </div>
+                <div class="container mx-auto px-4 py-16">
+                    <div class="flex flex-col lg:flex-row gap-12">
+                        <div class="lg:w-2/3">
+                            <img src="${service.image}" class="w-full h-[400px] object-cover rounded-3xl shadow-xl mb-10">
+                            <h2 class="text-2xl font-bold mb-6">Thông tin chi tiết</h2>
+                            <p class="text-lg text-slate-600 leading-relaxed mb-8">${service.description}</p>
+                            <div class="bg-sky-50 p-8 rounded-2xl border border-sky-100">
+                                <h3 class="font-bold text-xl mb-4">Tại sao nên chọn chúng tôi?</h3>
+                                <ul class="space-y-3">
+                                    <li class="flex items-center gap-2 font-semibold">✅ Xử lý hồ sơ khó, qua nhiều đời chủ</li>
+                                    <li class="flex items-center gap-2 font-semibold">✅ Báo giá trọn gói 1 lần</li>
+                                    <li class="flex items-center gap-2 font-semibold">✅ Làm việc trực tiếp tại cơ quan chức năng</li>
+                                    <li class="flex items-center gap-2 font-semibold">✅ Giao tận tay kết quả</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="lg:w-1/3">
+                            <div class="sticky top-24 bg-slate-50 p-8 rounded-3xl border border-slate-200">
+                                <h3 class="font-bold text-xl mb-6">Liên hệ tư vấn ngay</h3>
+                                <a href="tel:0867678339" class="block w-full text-center bg-sky-600 text-white py-4 rounded-xl font-bold mb-4">Gọi: 0867 678 339</a>
+                                <a href="https://zalo.me/0867678339" target="_blank" class="block w-full text-center bg-blue-500 text-white py-4 rounded-xl font-bold">Chat Zalo Ngay</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        } else {
+            window.location.href = 'dich-vu.html';
+        }
+        lucide.createIcons();
+    </script>
+</body>
+</html>
