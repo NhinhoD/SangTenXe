@@ -2,8 +2,9 @@
   "name": "sangtenxe24h",
   "version": "1.0.0",
   "private": true,
+  "description": "Dịch vụ sang tên xe chuyên nghiệp",
   "scripts": {
-    "start": "echo 'App is running without build step'",
-    "build": "echo 'No build step required'"
+    "start": "echo 'Running without build step'",
+    "build": "echo 'No build required'"
   }
 }

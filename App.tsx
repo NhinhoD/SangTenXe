@@ -8,6 +8,7 @@ import ContactPage from './pages/ContactPage.tsx';
 import About from './pages/About.tsx';
 import Consultation from './pages/Consultation.tsx';
 import Blog from './pages/Blog.tsx';
+import AIChatbot from './components/AIChatbot.tsx';
 import { COMPANY_PHONE } from './constants.tsx';
 
 const ScrollToTop = () => {
@@ -26,8 +27,6 @@ const AppContent: React.FC = () => {
     const params = new URLSearchParams(window.location.search);
     if (params.has('appParams')) {
       navigate('/', { replace: true });
-      const newUrl = window.location.pathname + window.location.hash;
-      window.history.replaceState({}, '', newUrl);
     }
   }, [navigate]);
 
@@ -48,8 +47,9 @@ const AppContent: React.FC = () => {
       </main>
       <Footer />
       
-      {/* Nút liên hệ cố định (Zalo & Phone) */}
-      <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-3">
+      <AIChatbot />
+      
+      <div className="fixed bottom-24 right-6 z-50 flex flex-col gap-3">
          <a 
           href={`https://zalo.me/${cleanPhone}`} 
           target="_blank" 
