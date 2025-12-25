@@ -1,8 +1,23 @@
 {
-  "name": "sangtenxe24h-vanilla",
-  "version": "1.0.0",
-  "description": "Dịch vụ sang tên xe thuần HTML/JS",
+  "name": "sangtenxe24h---dịch-vụ-sang-tên-xe-chuyên-nghiệp",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
   "scripts": {
-    "start": "echo 'No build required'"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
+    "react-router-dom": "7.1.5",
+    "lucide-react": "0.460.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.0",
+    "@vitejs/plugin-react": "^5.0.0",
+    "typescript": "~5.8.2",
+    "vite": "^6.2.0"
   }
 }

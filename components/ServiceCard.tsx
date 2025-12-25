@@ -1,7 +1,8 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
-import { ServiceItem } from '../types.ts';
+import { ServiceItem } from '../types';
 
 interface ServiceCardProps {
   service: ServiceItem;
@@ -15,7 +16,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service }) => {
       <div className="relative overflow-hidden h-52">
         <img 
           src={service.image} 
-          alt={service.title} 
+          alt={`Dịch vụ ${service.title} - SangTenXe24h`} 
           className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
           loading="lazy"
         />
