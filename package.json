@@ -2,5 +2,8 @@
   "name": "sangtenxe24h",
   "version": "1.0.0",
   "private": true,
-  "dependencies": {}
+  "scripts": {
+    "start": "echo 'Dự án chạy No-Build, mở index.html trực tiếp.'",
+    "build": "echo 'No build step required'"
+  }
 }
