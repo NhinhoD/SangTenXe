@@ -1,6 +1,6 @@
 
 import React, { useEffect } from 'react';
-import { HashRouter as Router, Routes, Route, useLocation, Navigate, useNavigate } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route, useLocation, Navigate } from 'react-router-dom';
 import Header from './components/Header.tsx';
 import Footer from './components/Footer.tsx';
 import Home from './pages/Home.tsx';
@@ -21,17 +21,7 @@ const ScrollToTop = () => {
 };
 
 const AppContent: React.FC = () => {
-  const navigate = useNavigate();
   const cleanPhone = COMPANY_PHONE.replace(/\s/g, '');
-
-  useEffect(() => {
-    const params = new URLSearchParams(window.location.search);
-    if (params.has('appParams')) {
-      navigate('/', { replace: true });
-      const newUrl = window.location.pathname + window.location.hash;
-      window.history.replaceState({}, '', newUrl);
-    }
-  }, [navigate]);
 
   return (
     <div className="flex flex-col min-h-screen font-sans text-slate-800 bg-white">
@@ -45,11 +35,12 @@ const AppContent: React.FC = () => {
           <Route path="/tu-van" element={<Consultation />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/lien-he" element={<ContactPage />} />
+          {/* Fallback route để tránh trang trắng */}
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </main>
       <Footer />
-      {/* Thêm chatbot vào layout chính */}
+      {/* Chatbot và nút liên hệ hỏa tốc */}
       <AIChatbot />
       <div className="fixed bottom-6 right-6 z-40 md:hidden flex flex-col gap-3">
          <a 
