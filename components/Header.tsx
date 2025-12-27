@@ -5,22 +5,17 @@ import { Phone, Menu, X, ChevronDown, Clock } from 'lucide-react';
 import { COMPANY_PHONE, NAV_ITEMS } from '../constants.tsx';
 
 const Logo = () => (
-  <div className="flex items-center gap-2 group">
-    <div className="relative w-10 h-10 md:w-12 md:h-12 flex items-center justify-center">
-      <div className="absolute inset-0 bg-sky-100 rounded-xl rotate-6 group-hover:rotate-12 transition-transform"></div>
-      <div className="relative w-8 h-8 md:w-10 md:h-10 bg-gradient-to-br from-sky-500 to-blue-600 rounded-lg flex items-center justify-center shadow-lg transform group-hover:-translate-y-1 transition-transform">
-        <svg viewBox="0 0 24 24" fill="none" className="w-5 h-5 md:w-7 md:h-7 text-white" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-1.1 0-2 .9-2 2v7h2" />
-          <circle cx="7" cy="17" r="2" />
-          <circle cx="17" cy="17" r="2" />
-          <path d="M9 17h6" />
-          <path d="m11 12 2 2 4-4" />
-        </svg>
-      </div>
+  <div className="flex items-center gap-3 group">
+    <div className="relative w-12 h-12 md:w-16 md:h-16 flex items-center justify-center overflow-hidden">
+      <img 
+        src="https://res.cloudinary.com/dfh9gktg8/image/upload/v1766801284/LogoWeb_ukbmgf.png" 
+        alt="SangTenXe24h Logo" 
+        className="w-full h-full object-contain transform group-hover:scale-110 transition-transform duration-500"
+      />
     </div>
     <div className="flex flex-col leading-none">
-      <span className="text-lg md:text-xl font-black text-slate-800 tracking-tighter">SangTenXe<span className="text-sky-600">24h</span></span>
-      <span className="text-[8px] md:text-[10px] font-bold text-sky-500 uppercase tracking-[0.2em] mt-0.5">Uy tín hàng đầu</span>
+      <span className="text-xl md:text-2xl font-black text-slate-800 tracking-tighter">SangTenXe<span className="text-sky-600">24h</span></span>
+      <span className="text-[8px] md:text-[11px] font-bold text-sky-500 uppercase tracking-[0.2em] mt-0.5">Uy tín hàng đầu</span>
     </div>
   </div>
 );
@@ -49,7 +44,7 @@ const Header: React.FC = () => {
   return (
     <header className="w-full shadow-md z-50 bg-white sticky top-0">
       <div className="border-b border-gray-100 bg-white">
-        <div className="container mx-auto px-4 h-16 md:h-20 flex justify-between items-center">
+        <div className="container mx-auto px-4 h-16 md:h-24 flex justify-between items-center">
           <Link to="/" className="flex-shrink-0">
             <Logo />
           </Link>

@@ -10,10 +10,16 @@ const Footer: React.FC = () => {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-10">
           <div>
-            <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
-              <span className="w-2 h-6 bg-sky-500 rounded-sm"></span>
-              SangTenXe24h
-            </h3>
+            <div className="flex items-center gap-3 mb-6">
+              <img 
+                src="https://res.cloudinary.com/dfh9gktg8/image/upload/v1766801284/LogoWeb_ukbmgf.png" 
+                alt="SangTenXe24h Logo" 
+                className="w-12 h-12 object-contain bg-white rounded-lg p-1"
+              />
+              <h3 className="text-xl font-bold text-white leading-none">
+                SangTenXe24h
+              </h3>
+            </div>
             <p className="text-sm leading-7 mb-6 text-slate-400">
               Chuyên gia dịch vụ sang tên xe ô tô, rút hồ sơ gốc và pháp lý xe cơ giới uy tín hàng đầu. 
             </p>
