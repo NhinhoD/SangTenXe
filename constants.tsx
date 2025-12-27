@@ -28,43 +28,43 @@ export const NAV_ITEMS: NavItem[] = [
 export const SERVICES: ServiceItem[] = [
   {
     id: "sang-ten",
-    title: "Dịch vụ sang tên xe ô tô và xe máy tphcm hỏa tốc",
-    description: "Chuyên thực hiện thủ tục sang tên xe ô tô, sang tên xe máy trọn gói tại TP.HCM. Hỗ trợ sang tên chính chủ theo Thông tư 24, giữ biển số định danh, xử lý hồ sơ khó, xe qua nhiều đời chủ nhanh gọn trong 3-5 ngày.",
+    title: "Dịch vụ sang tên xe ô tô và xe máy tại TPHCM uy tín",
+    description: "Chuyên thủ tục sang tên xe ô tô, xe máy trọn gói tại TP.HCM. Hỗ trợ làm giấy tờ sang tên chính chủ theo Thông tư 24, giữ biển số định danh, xử lý hồ sơ sang tên xe cũ không chính chủ hỏa tốc trong 3-5 ngày làm việc.",
     image: "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&q=80&w=800", 
     icon: Car
   },
   {
     id: "rut-ho-so",
-    title: "Rút hồ sơ gốc xe ô tô, xe máy toàn quốc uy tín",
-    description: "Dịch vụ rút hồ sơ gốc xe ô tô và xe máy cho xe chuyển vùng tỉnh về TP.HCM hoặc ngược lại. Cam kết rút hồ sơ gốc xe nhanh chóng, đúng pháp luật, hỗ trợ cà số khung số máy tận nơi cho khách hàng.",
+    title: "Dịch vụ rút hồ sơ gốc xe ô tô, xe máy toàn quốc hỏa tốc",
+    description: "Nhận rút hồ sơ gốc xe ô tô và xe máy cho khách hàng mua xe biển tỉnh về TP.HCM. Cam kết dịch vụ rút hồ sơ gốc nhanh chóng, giá rẻ, đúng pháp luật, hỗ trợ thủ tục từ xa không cần đánh xe đi.",
     image: "https://images.unsplash.com/photo-1554224155-1696413565d3?auto=format&fit=crop&q=80&w=800", 
     icon: FileText
   },
   {
     id: "cap-doi",
-    title: "Làm lại giấy tờ xe - Cấp lại Cà vẹt bị mất",
-    description: "Bạn bị mất đăng ký xe? SangTenXe24h cung cấp dịch vụ làm lại cà vẹt xe bị mất, cấp đổi đăng ký xe hư hỏng hỏa tốc. Thủ tục đơn giản, không cần chờ đợi lâu tại cơ quan công an.",
+    title: "Làm lại đăng ký xe bị mất - Cấp lại Cà vẹt xe hỏa tốc",
+    description: "Bạn cần làm lại giấy tờ xe bị mất? Dịch vụ cấp lại đăng ký xe (cà vẹt) bị mất nhanh nhất tại TPHCM. Thủ tục đơn giản, không cần chờ đợi lâu, giao kết quả tận nơi cho khách hàng.",
     image: "https://images.unsplash.com/photo-1632833239869-a37e3a5806d2?auto=format&fit=crop&q=80&w=800",
     icon: Repeat
   },
   {
     id: "bien-so",
-    title: "Dịch vụ làm lại biển số xe & Biển số định danh",
-    description: "Tư vấn và thực hiện thủ tục biển số định danh 2025. Hỗ trợ làm lại biển số xe bị mất, mờ số, gãy biển. Ép biển số chống nước inox cao cấp bảo vệ biển số bền đẹp.",
+    title: "Cấp lại biển số xe bị mất & Đăng ký biển số định danh",
+    description: "Tư vấn làm thủ tục biển số định danh 2025. Dịch vụ cấp lại biển số xe bị mất, biển số mờ, gãy hoặc đổi sang biển dài. Nhận ép biển số chống nước inox cao cấp bền đẹp lấy liền.",
     image: "https://mercedesphumyhung.com.vn/wp-content/uploads/2024/10/audi2.jpg",
     icon: ShieldCheck
   },
   {
     id: "dang-kiem",
-    title: "Cà số khung số máy tận nhà & Hỗ trợ Đăng kiểm",
-    description: "Cung cấp thợ cà số khung số máy chuyên nghiệp tận nhà tại TP.HCM. Hỗ trợ đưa xe đi đăng kiểm, xử lý các lỗi đăng kiểm nhanh chóng cho xe ô tô con, xe tải.",
+    title: "Cà số khung số máy tại nhà & Hỗ trợ Đăng kiểm xe ô tô",
+    description: "Cung cấp thợ cà số khung số máy chuyên nghiệp tận nhà tại TP.HCM cho ô tô và xe máy. Hỗ trợ đưa xe đi đăng kiểm, xử lý các lỗi đăng kiểm nhanh chóng, đảm bảo xe lưu hành đúng quy định.",
     image: "https://media.vietnamplus.vn/images/7255a701687d11cb8c6bbc58a6c80785d45dd972489b8630a840aa247a41769c10d29387ecb7ce29b9c4716bcb8e355f7c8ad008c57673c6c1582d78e0e2a8301039b653f7228b0042d704e48349bb259c6b3b4e826641f2a5ff22c7cd96e7c0/5c13378d057c480a8e98c64a413e20613682161636517973.jpg",
     icon: PenTool
   },
   {
     id: "van-tai",
-    title: "Phù hiệu xe tải & Giấy phép kinh doanh vận tải",
-    description: "Đăng ký phù hiệu xe hợp đồng, xe tải hỏa tốc. Tư vấn thành lập hộ kinh doanh cá thể, HTX vận tải và cấp giấy phép kinh doanh vận tải bằng ô tô trọn gói.",
+    title: "Đăng ký phù hiệu xe tải & Giấy phép kinh doanh vận tải",
+    description: "Làm phù hiệu xe tải, xe hợp đồng hỏa tốc. Tư vấn thành lập hộ kinh doanh, HTX vận tải và cấp giấy phép kinh doanh vận tải bằng xe ô tô trọn gói giá tốt nhất.",
     image: "https://cdn.dailyxe.com.vn/image/toyota-prius-2025-338480j.jpg?ref=bonboncar.vn",
     icon: Truck
   }
@@ -73,22 +73,22 @@ export const SERVICES: ServiceItem[] = [
 export const BLOG_POSTS: BlogPost[] = [
   {
     id: "1",
-    title: "Thủ tục sang tên xe ô tô mới nhất 2025: Những điều cần biết",
-    summary: "Hướng dẫn chi tiết quy trình sang tên xe ô tô, sang tên xe máy theo Thông tư 24. Cách giữ biển số định danh và bảng thuế trước bạ xe cũ mới nhất.",
+    title: "Quy trình sang tên xe ô tô 2025 và lệ phí sang tên xe cũ",
+    summary: "Hướng dẫn chi tiết thủ tục sang tên xe ô tô, xe máy theo Thông tư 24 mới nhất. Cách tính thuế trước bạ sang tên xe cũ và các bước giữ biển số định danh.",
     image: "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&q=80&w=800",
     date: "20/02/2025"
   },
   {
     id: "2",
-    title: "Dịch vụ rút hồ sơ gốc xe máy khác tỉnh: Quy trình và Lệ phí",
-    summary: "Làm thế nào để rút hồ sơ gốc xe nhanh nhất khi mua xe biển tỉnh? SangTenXe24h chia sẻ kinh nghiệm rút hồ sơ gốc toàn quốc an toàn, giá rẻ.",
+    title: "Thủ tục rút hồ sơ gốc xe máy, ô tô chuyển vùng tỉnh",
+    summary: "Mua xe tỉnh về TPHCM cần những giấy tờ gì? Dịch vụ rút hồ sơ gốc toàn quốc hướng dẫn quy trình rút hồ sơ xe nhanh nhất để không bị trễ hạn sang tên.",
     image: "https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&q=80&w=800",
     date: "18/02/2025"
   },
   {
     id: "3",
-    title: "Mất cà vẹt xe phải làm sao? Dịch vụ làm lại giấy tờ xe uy tín",
-    summary: "Thủ tục xin cấp lại đăng ký xe bị mất tại TP.HCM. Giải pháp làm lại cà vẹt xe nhanh gọn không cần chính chủ đi cùng cho các trường hợp đặc biệt.",
+    title: "Mất đăng ký xe (cà vẹt) làm lại ở đâu? Thủ tục cấp lại cà vẹt",
+    summary: "Dịch vụ làm lại cà vẹt xe bị mất uy tín tại TPHCM. Hướng dẫn chuẩn bị hồ sơ xin cấp lại giấy tờ xe khi không chính chủ hoặc mất hồ sơ tự quản.",
     image: "https://cdn.thuvienphapluat.vn/uploads/tintuc/2025/01/07/loi-xe-khong-chinh-chu.jpg",
     date: "15/02/2025"
   }
@@ -96,15 +96,15 @@ export const BLOG_POSTS: BlogPost[] = [
 
 export const FAQ_ITEMS: FaqItem[] = [
   {
-    question: "Chi phí sang tên xe ô tô tphcm là bao nhiêu?",
-    answer: "Chi phí bao gồm thuế trước bạ (2% giá trị xe cũ), lệ phí cấp đổi biển số và phí dịch vụ sang tên xe của SangTenXe24h. Liên hệ hotline để nhận báo giá chính xác theo loại xe."
+    question: "Dịch vụ sang tên xe ô tô TPHCM giá bao nhiêu?",
+    answer: "Chi phí sang tên xe bao gồm thuế trước bạ 2% (đối với xe cũ), lệ phí biển số và phí dịch vụ làm hồ sơ của SangTenOtoSG. Vui lòng liên hệ để nhận báo giá chi tiết cho từng loại xe."
   },
   {
-    question: "Rút hồ sơ gốc xe máy mất bao lâu?",
-    answer: "Thông thường quy trình rút hồ sơ gốc xe tại tỉnh mất từ 5-7 ngày làm việc. Tại TP.HCM, chúng tôi có thể hỗ trợ rút hỏa tốc trong 2-3 ngày."
+    question: "Rút hồ sơ gốc xe ô tô mất bao lâu?",
+    answer: "Thời gian rút hồ sơ gốc xe thường từ 5-10 ngày tùy tỉnh thành. SangTenOtoSG có dịch vụ rút hồ sơ gốc hỏa tốc giúp quý khách tiết kiệm thời gian tối đa."
   },
   {
-    question: "Sang tên xe không chính chủ có làm được không?",
-    answer: "Được. Theo Thông tư 24, chúng tôi hỗ trợ làm thủ tục sang tên xe cho các trường hợp xe mua bán qua nhiều đời chủ mà không tìm được chủ cũ."
+    question: "Làm lại cà vẹt xe bị mất có cần mang xe đến không?",
+    answer: "Đối với dịch vụ làm lại đăng ký xe bị mất tại SangTenOtoSG, chúng tôi hỗ trợ xử lý hồ sơ nhanh gọn, trong nhiều trường hợp khách hàng không cần phải đánh xe đến cơ quan công an."
   }
 ];

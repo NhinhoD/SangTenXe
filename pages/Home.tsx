@@ -37,7 +37,7 @@ const Home: React.FC = () => {
   ];
 
   useEffect(() => {
-    document.title = "SangTenXe24h - Dịch Vụ Sang Tên Xe Ô Tô, Xe Máy TPHCM & Rút Hồ Sơ Gốc";
+    document.title = "Dịch Vụ Sang Tên Xe Ô Tô, Xe Máy & Rút Hồ Sơ Gốc | SangTenOtoSG";
     const slideInterval = setInterval(() => {
       setCurrentSlide((prev) => (prev === heroSlides.length - 1 ? 0 : prev + 1));
     }, 7000);
@@ -54,7 +54,7 @@ const Home: React.FC = () => {
       
       {/* Hero Section - Elite Slide Show */}
       <section className="relative h-[650px] md:h-[850px] flex items-center justify-center overflow-hidden bg-slate-950">
-        <h1 className="sr-only">Dịch vụ sang tên xe ô tô và rút hồ sơ gốc xe chuyên nghiệp tại TPHCM</h1>
+        <h1 className="sr-only">Dịch vụ sang tên xe ô tô, rút hồ sơ gốc, làm lại đăng ký xe và cà số máy tại TPHCM</h1>
         
         {heroSlides.map((slide, index) => (
           <div 
@@ -77,7 +77,7 @@ const Home: React.FC = () => {
                   <span className="w-12 h-[2px] bg-sky-500"></span>
                   <span className="text-sky-400 text-xs font-black uppercase tracking-[0.4em]">Uy tín - Chuyên nghiệp - Tận tâm</span>
                 </div>
-                <h2 className="text-5xl md:text-7xl lg:text-8xl font-black mb-8 leading-[1.1] tracking-tighter drop-shadow-2xl">
+                <h2 className="text-4xl md:text-7xl lg:text-8xl font-black mb-8 leading-[1.1] tracking-tighter drop-shadow-2xl">
                   {slide.title} <br/>
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 via-blue-400 to-indigo-400">{slide.highlight}</span>
                 </h2>
@@ -140,7 +140,7 @@ const Home: React.FC = () => {
                 <Shield size={32} strokeWidth={1.5} />
               </div>
               <div>
-                <h4 className="font-black text-slate-800 text-lg">Bảo mật & Pháp lý</h4>
+                <h4 className="font-black text-slate-800 text-lg">Sang tên an toàn</h4>
                 <p className="text-slate-500 text-sm">Hồ sơ thực hiện đúng quy định 100%</p>
               </div>
             </div>
@@ -149,7 +149,7 @@ const Home: React.FC = () => {
                 <Clock size={32} strokeWidth={1.5} />
               </div>
               <div>
-                <h4 className="font-black text-slate-800 text-lg">Hỏa tốc 24/7</h4>
+                <h4 className="font-black text-slate-800 text-lg">Rút hồ sơ hỏa tốc</h4>
                 <p className="text-slate-500 text-sm">Xử lý nhanh, giao kết quả tận nơi</p>
               </div>
             </div>
@@ -158,7 +158,7 @@ const Home: React.FC = () => {
                 <DollarSign size={32} strokeWidth={1.5} />
               </div>
               <div>
-                <h4 className="font-black text-slate-800 text-lg">Giá rẻ trọn gói</h4>
+                <h4 className="font-black text-slate-800 text-lg">Giá dịch vụ rẻ</h4>
                 <p className="text-slate-500 text-sm">Cam kết không phát sinh bất kỳ phí gì</p>
               </div>
             </div>
@@ -176,8 +176,8 @@ const Home: React.FC = () => {
                   <div className="absolute -top-10 -left-10 w-40 h-40 bg-sky-500/10 rounded-full blur-3xl animate-pulse"></div>
                   <div className="absolute -bottom-10 -right-10 w-60 h-60 bg-blue-500/10 rounded-full blur-3xl"></div>
                   <div className="grid grid-cols-2 gap-6 relative z-10">
-                    <img src="https://images.unsplash.com/photo-1549194388-f61be84a6e9e?auto=format&fit=crop&q=80&w=800" className="rounded-[2.5rem] shadow-2xl w-full h-80 object-cover mt-12 hover:scale-[1.02] transition-transform duration-500" alt="Rút hồ sơ gốc xe ô tô" />
-                    <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&q=80&w=800" className="rounded-[2.5rem] shadow-2xl w-full h-80 object-cover hover:scale-[1.02] transition-transform duration-500" alt="Sang tên xe tphcm" />
+                    <img src="https://images.unsplash.com/photo-1549194388-f61be84a6e9e?auto=format&fit=crop&q=80&w=800" className="rounded-[2.5rem] shadow-2xl w-full h-80 object-cover mt-12 hover:scale-[1.02] transition-transform duration-500" alt="Dịch vụ rút hồ sơ gốc xe ô tô toàn quốc" />
+                    <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&q=80&w=800" className="rounded-[2.5rem] shadow-2xl w-full h-80 object-cover hover:scale-[1.02] transition-transform duration-500" alt="Dịch vụ sang tên xe ô tô TPHCM hỏa tốc" />
                   </div>
                   <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-40 h-40 bg-white rounded-full shadow-2xl flex flex-col items-center justify-center z-20 border-8 border-sky-50">
                     <span className="text-3xl font-black text-sky-600">10+</span>
@@ -190,17 +190,17 @@ const Home: React.FC = () => {
             <div className="lg:w-1/2">
               <Reveal effect="right">
                 <div className="mb-10">
-                  <span className="inline-block py-1 px-4 bg-sky-50 text-sky-600 rounded-full text-[10px] font-black uppercase tracking-[0.2em] mb-4">Câu chuyện thương hiệu</span>
-                  <h3 className="text-4xl md:text-5xl font-black text-slate-900 mb-8 leading-[1.2]">Chúng Tôi Là Chuyên Gia Thủ Tục Xe Tại <span className="text-sky-600">Sài Gòn</span></h3>
+                  <span className="inline-block py-1 px-4 bg-sky-50 text-sky-600 rounded-full text-[10px] font-black uppercase tracking-[0.2em] mb-4">Chuyên gia thủ tục xe</span>
+                  <h3 className="text-4xl md:text-5xl font-black text-slate-900 mb-8 leading-[1.2]">Dịch Vụ Sang Tên Xe & <span className="text-sky-600">Rút Hồ Sơ Gốc</span> Uy Tín</h3>
                   <p className="text-slate-600 text-xl leading-relaxed mb-8 font-light">
-                    Hơn một thập kỷ qua, <strong>SangTenXe24h</strong> đã đồng hành cùng hàng ngàn chủ xe, giúp họ gỡ rối mọi nút thắt pháp lý một cách nhẹ nhàng nhất. Chúng tôi không chỉ làm dịch vụ, chúng tôi xây dựng niềm tin.
+                    Hơn một thập kỷ qua, <strong>SangTenOtoSG</strong> đã giúp hàng ngàn khách hàng hoàn tất thủ tục <strong>sang tên xe</strong>, <strong>rút hồ sơ gốc</strong> và <strong>làm lại đăng ký xe</strong> một cách nhanh chóng nhất tại TPHCM.
                   </p>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-12">
                     {[
-                      "Thủ tục sang tên chính chủ 2025",
-                      "Rút hồ sơ gốc xe tỉnh hỏa tốc",
-                      "Làm lại cà vẹt mất hỏa tốc",
-                      "Biển số định danh chuyên nghiệp"
+                      "Thủ tục sang tên xe chính chủ 2025",
+                      "Rút hồ sơ gốc xe ô tô hỏa tốc",
+                      "Cấp lại cà vẹt xe bị mất nhanh",
+                      "Cà số khung số máy tận nhà"
                     ].map((item, i) => (
                       <div key={i} className="flex items-center gap-3">
                         <div className="w-6 h-6 rounded-full bg-green-50 text-green-500 flex items-center justify-center shrink-0">
@@ -213,59 +213,19 @@ const Home: React.FC = () => {
                   <div className="flex flex-wrap gap-8 items-center border-t border-slate-100 pt-10">
                     <div className="flex flex-col">
                       <span className="text-3xl font-black text-slate-900">5.000+</span>
-                      <span className="text-xs text-slate-400 font-bold uppercase tracking-widest">Khách hàng hài lòng</span>
+                      <span className="text-xs text-slate-400 font-bold uppercase tracking-widest">Khách hàng tin dùng</span>
                     </div>
                     <div className="w-px h-10 bg-slate-200"></div>
                     <div className="flex flex-col">
                       <span className="text-3xl font-black text-slate-900">24/7</span>
-                      <span className="text-xs text-slate-400 font-bold uppercase tracking-widest">Tư vấn miễn phí</span>
+                      <span className="text-xs text-slate-400 font-bold uppercase tracking-widest">Hỗ trợ hotline</span>
                     </div>
                     <Link to="/gioi-thieu" className="ml-auto text-sky-600 font-black flex items-center gap-2 group hover:gap-4 transition-all">
-                      Xem thêm <ChevronRight size={20} />
+                      Tìm hiểu thêm <ChevronRight size={20} />
                     </Link>
                   </div>
                 </div>
               </Reveal>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Modern Statistics Section */}
-      <section className="py-24 bg-slate-950 text-white relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
-          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-sky-500 rounded-full blur-[150px]"></div>
-          <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-500 rounded-full blur-[150px]"></div>
-        </div>
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-12 text-center">
-            <div className="space-y-4">
-              <div className="w-20 h-20 bg-white/5 rounded-3xl flex items-center justify-center mx-auto border border-white/10 text-sky-400">
-                <Star size={36} />
-              </div>
-              <h4 className="text-4xl font-black">4.9/5</h4>
-              <p className="text-slate-400 text-sm uppercase font-bold tracking-widest">Đánh giá Google</p>
-            </div>
-            <div className="space-y-4">
-              <div className="w-20 h-20 bg-white/5 rounded-3xl flex items-center justify-center mx-auto border border-white/10 text-blue-400">
-                <Users size={36} />
-              </div>
-              <h4 className="text-4xl font-black">15+</h4>
-              <p className="text-slate-400 text-sm uppercase font-bold tracking-widest">Chuyên gia tư vấn</p>
-            </div>
-            <div className="space-y-4">
-              <div className="w-20 h-20 bg-white/5 rounded-3xl flex items-center justify-center mx-auto border border-white/10 text-indigo-400">
-                <Trophy size={36} />
-              </div>
-              <h4 className="text-4xl font-black">Top 1</h4>
-              <p className="text-slate-400 text-sm uppercase font-bold tracking-widest">Dịch vụ xe TPHCM</p>
-            </div>
-            <div className="space-y-4">
-              <div className="w-20 h-20 bg-white/5 rounded-3xl flex items-center justify-center mx-auto border border-white/10 text-sky-400">
-                <Shield size={36} />
-              </div>
-              <h4 className="text-4xl font-black">100%</h4>
-              <p className="text-slate-400 text-sm uppercase font-bold tracking-widest">Đảm bảo pháp lý</p>
             </div>
           </div>
         </div>
@@ -276,8 +236,8 @@ const Home: React.FC = () => {
         <div className="container mx-auto px-6">
           <div className="flex flex-col md:flex-row justify-between items-end mb-20">
             <Reveal className="max-w-2xl">
-              <span className="text-sky-500 font-black uppercase tracking-[0.3em] text-[10px] mb-4 block">Danh mục dịch vụ</span>
-              <h3 className="text-4xl md:text-5xl font-black text-slate-900 leading-tight">Giải Pháp Giấy Tờ Xe <br/> <span className="text-sky-600">Toàn Diện & Chuyên Sâu</span></h3>
+              <span className="text-sky-500 font-black uppercase tracking-[0.3em] text-[10px] mb-4 block">Các dịch vụ tiêu biểu</span>
+              <h3 className="text-4xl md:text-5xl font-black text-slate-900 leading-tight">Dịch Vụ Giấy Tờ Xe <br/> <span className="text-sky-600">Sang Tên & Rút Hồ Sơ</span></h3>
             </Reveal>
             <Link to="/dich-vu" className="hidden md:flex bg-white border border-slate-200 text-slate-800 font-bold py-4 px-10 rounded-2xl hover:bg-slate-900 hover:text-white transition-all items-center gap-3">
               Xem tất cả dịch vụ <ChevronRight size={18} />
@@ -293,13 +253,13 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* Map & Office Section - Elegant Interface */}
+      {/* Map & Office Section */}
       <section className="py-32 bg-white">
         <div className="container mx-auto px-6">
           <div className="bg-white rounded-[4rem] shadow-[0_100px_150px_rgba(0,0,0,0.1)] overflow-hidden flex flex-col lg:flex-row border border-slate-50 min-h-[650px]">
             <div className="lg:w-[45%] p-12 md:p-20 flex flex-col justify-center">
               <Reveal>
-                <span className="text-sky-500 font-black uppercase tracking-[0.3em] text-[10px] mb-6 block">Hệ thống văn phòng</span>
+                <span className="text-sky-500 font-black uppercase tracking-[0.3em] text-[10px] mb-6 block">Địa chỉ sang tên xe uy tín</span>
                 <h3 className="text-4xl md:text-5xl font-black text-slate-900 mb-10 leading-tight">Văn Phòng Tại <br/> Trung Tâm <span className="text-sky-600">Bình Thạnh</span></h3>
                 
                 <div className="space-y-10 mb-12">
@@ -308,7 +268,7 @@ const Home: React.FC = () => {
                       <MapPin size={28} />
                     </div>
                     <div>
-                      <h4 className="font-black text-slate-900 text-lg mb-2">Trụ sở chính</h4>
+                      <h4 className="font-black text-slate-900 text-lg mb-2">Trụ sở chính TPHCM</h4>
                       <p className="text-slate-500 leading-relaxed max-w-xs">{COMPANY_ADDRESS}</p>
                     </div>
                   </div>
@@ -317,15 +277,15 @@ const Home: React.FC = () => {
                       <Phone size={28} />
                     </div>
                     <div>
-                      <h4 className="font-black text-slate-900 text-lg mb-2">Hotline 24/7</h4>
+                      <h4 className="font-black text-slate-900 text-lg mb-2">Tư vấn sang tên xe 24/7</h4>
                       <p className="text-sky-600 text-3xl font-black">{COMPANY_PHONE}</p>
-                      <p className="text-slate-400 text-xs mt-1 uppercase font-bold tracking-widest">Zalo / Viber / Call</p>
+                      <p className="text-slate-400 text-xs mt-1 uppercase font-bold tracking-widest">Zalo tư vấn hỏa tốc</p>
                     </div>
                   </div>
                 </div>
 
                 <div className="flex gap-4">
-                  <Link to="/lien-he" className="bg-sky-600 hover:bg-sky-700 text-white font-black py-5 px-10 rounded-2xl shadow-xl shadow-sky-600/20 transition-all uppercase tracking-widest text-xs">Liên hệ ngay</Link>
+                  <Link to="/lien-he" className="bg-sky-600 hover:bg-sky-700 text-white font-black py-5 px-10 rounded-2xl shadow-xl shadow-sky-600/20 transition-all uppercase tracking-widest text-xs">Yêu cầu tư vấn</Link>
                   <a href="https://maps.app.goo.gl/TirK5G6C877rXwE46" target="_blank" rel="noopener noreferrer" className="bg-slate-100 hover:bg-slate-200 text-slate-800 font-black py-5 px-10 rounded-2xl transition-all uppercase tracking-widest text-xs flex items-center gap-2">
                     <MapIcon size={18} /> Chỉ đường
                   </a>
@@ -333,13 +293,12 @@ const Home: React.FC = () => {
               </Reveal>
             </div>
             <div className="lg:w-[55%] h-[500px] lg:h-auto min-h-[500px] relative">
-              {/* Overlay elements for better UI */}
               <iframe 
                 src={mapEmbedUrl}
                 className="absolute inset-0 w-full h-full border-0"
                 allowFullScreen={true}
                 loading="lazy" 
-                title="Vị trí sang tên xe tphcm"
+                title="Bản đồ địa chỉ rút hồ sơ gốc xe tphcm"
               ></iframe>
             </div>
           </div>
@@ -348,17 +307,12 @@ const Home: React.FC = () => {
 
       {/* Simple Footer CTA */}
       <section className="py-20 bg-sky-600 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
-            <path d="M0 100 C 20 0 50 0 100 100 Z" fill="white"></path>
-          </svg>
-        </div>
         <div className="container mx-auto px-6 text-center relative z-10">
           <Reveal>
-            <h3 className="text-3xl md:text-5xl font-black text-white mb-10 leading-tight">Bạn Cần Sang Tên Xe Ngay Hôm Nay?</h3>
+            <h3 className="text-3xl md:text-5xl font-black text-white mb-10 leading-tight">Hỗ Trợ Làm Giấy Tờ Xe Hỏa Tốc Tại Nhà</h3>
             <div className="flex flex-col sm:flex-row justify-center gap-6">
-              <a href={`tel:${COMPANY_PHONE.replace(/\s/g, '')}`} className="bg-white text-sky-600 font-black py-5 px-12 rounded-2xl shadow-2xl hover:scale-105 transition-all uppercase tracking-widest text-sm">GỌI MIỄN PHÍ: {COMPANY_PHONE}</a>
-              <Link to="/tu-van" className="bg-sky-950 text-white font-black py-5 px-12 rounded-2xl shadow-2xl hover:bg-slate-900 transition-all uppercase tracking-widest text-sm">XEM BÁO GIÁ DỊCH VỤ</Link>
+              <a href={`tel:${COMPANY_PHONE.replace(/\s/g, '')}`} className="bg-white text-sky-600 font-black py-5 px-12 rounded-2xl shadow-2xl hover:scale-105 transition-all uppercase tracking-widest text-sm">GỌI HOTLINE: {COMPANY_PHONE}</a>
+              <Link to="/tu-van" className="bg-sky-950 text-white font-black py-5 px-12 rounded-2xl shadow-2xl hover:bg-slate-900 transition-all uppercase tracking-widest text-sm">TƯ VẤN THỦ TỤC MIỄN PHÍ</Link>
             </div>
           </Reveal>
         </div>
