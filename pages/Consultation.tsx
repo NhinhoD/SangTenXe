@@ -1,67 +1,164 @@
 
 import React, { useState, useEffect } from 'react';
-import { ChevronDown, ChevronUp, MessageCircle, FileQuestion, HelpCircle } from 'lucide-react';
+import { ChevronDown, ChevronUp, MessageCircle, FileQuestion, HelpCircle, Calculator, Info, Landmark, ArrowRight } from 'lucide-react';
 import { FAQ_ITEMS, COMPANY_PHONE } from '../constants';
 
 const Consultation: React.FC = () => {
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
+  
+  // Tax Calculator State
+  const [carValue, setCarValue] = useState<string>('');
+  const [carType, setCarType] = useState<'old' | 'new'>('old');
+  const [estimatedTax, setEstimatedTax] = useState<number | null>(null);
 
   useEffect(() => {
-    document.title = "Tư Vấn & Hỏi Đáp Thủ Tục Giấy Tờ Xe - SangTenXe24h";
+    document.title = "Tư Vấn & Công Cụ Tính Thuế Giấy Tờ Xe - SangTenXe24h";
   }, []);
+
+  const calculateTax = () => {
+    const value = parseFloat(carValue.replace(/,/g, ''));
+    if (isNaN(value)) return;
+    
+    // Simple estimation logic for 2025
+    // Old car: 2%, New car: 10-12%
+    const rate = carType === 'old' ? 0.02 : 0.10;
+    setEstimatedTax(value * rate);
+  };
 
   const toggleFaq = (index: number) => {
     setOpenFaqIndex(openFaqIndex === index ? null : index);
+  };
+
+  const formatCurrency = (val: number) => {
+    return new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(val);
   };
 
   const cleanPhone = COMPANY_PHONE.replace(/\s/g, '');
 
   return (
     <div className="bg-white">
-      <div className="bg-sky-50 py-16">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-3xl md:text-5xl font-bold text-slate-800 mb-4">Tư Vấn Thủ Tục Xe</h1>
-          <p className="text-slate-600 max-w-2xl mx-auto">
-            Giải đáp mọi thắc mắc về sang tên, rút hồ sơ, biển số định danh và các vấn đề pháp lý liên quan tại SangTenXe24h.
+      {/* Banner */}
+      <div className="bg-slate-950 py-20 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-sky-900/30 to-transparent"></div>
+        <div className="container mx-auto px-4 text-center relative z-10">
+          <span className="text-sky-400 font-black uppercase tracking-[0.3em] text-xs mb-4 block">Hỗ trợ pháp lý & Công cụ</span>
+          <h1 className="text-4xl md:text-6xl font-black text-white mb-6">Tư Vấn & Hỏi Đáp</h1>
+          <p className="text-slate-400 max-w-2xl mx-auto text-lg font-light leading-relaxed">
+            Mọi thắc mắc về sang tên, rút hồ sơ, biển số định danh mới nhất 2025 đều được giải đáp tại đây.
           </p>
         </div>
       </div>
 
-      <div className="container mx-auto px-4 py-16">
-        <div className="flex flex-col lg:flex-row gap-12">
+      <div className="container mx-auto px-4 py-24">
+        <div className="flex flex-col lg:flex-row gap-16">
           
-          {/* FAQ Section */}
+          {/* Main Content */}
           <div className="lg:w-2/3">
-            <div className="flex items-center gap-3 mb-8">
-              <HelpCircle className="text-sky-500" size={28} />
-              <h2 className="text-2xl font-bold text-slate-800">Câu Hỏi Thường Gặp</h2>
+            
+            {/* Tax Calculator Tool */}
+            <div className="bg-slate-50 rounded-[3rem] p-10 md:p-14 mb-20 border border-slate-100 shadow-sm">
+               <div className="flex items-center gap-4 mb-10">
+                  <div className="w-14 h-14 bg-sky-600 text-white rounded-2xl flex items-center justify-center shadow-lg shadow-sky-200">
+                    <Calculator size={28} />
+                  </div>
+                  <div>
+                    <h2 className="text-2xl font-black text-slate-900 leading-tight">Tính Thuế Trước Bạ Tạm Tính</h2>
+                    <p className="text-slate-500 text-sm font-medium">Ước tính lệ phí cần nộp khi sang tên xe</p>
+                  </div>
+               </div>
+
+               <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+                  <div className="space-y-8">
+                     <div>
+                        <label className="block text-slate-700 text-[10px] font-black uppercase tracking-widest mb-3 ml-1">Loại giao dịch</label>
+                        <div className="flex bg-white p-1 rounded-2xl border border-slate-200">
+                           <button 
+                             onClick={() => setCarType('old')}
+                             className={`flex-1 py-3 rounded-xl text-xs font-black transition-all ${carType === 'old' ? 'bg-sky-600 text-white shadow-md' : 'text-slate-400 hover:text-sky-600'}`}
+                           >
+                             XE CŨ (SANG TÊN)
+                           </button>
+                           <button 
+                             onClick={() => setCarType('new')}
+                             className={`flex-1 py-3 rounded-xl text-xs font-black transition-all ${carType === 'new' ? 'bg-sky-600 text-white shadow-md' : 'text-slate-400 hover:text-sky-600'}`}
+                           >
+                             XE MỚI ĐĂNG KÝ
+                           </button>
+                        </div>
+                     </div>
+
+                     <div>
+                        <label className="block text-slate-700 text-[10px] font-black uppercase tracking-widest mb-3 ml-1">Giá trị xe (VND)</label>
+                        <div className="relative">
+                          <input 
+                            type="text" 
+                            value={carValue}
+                            onChange={(e) => setCarValue(e.target.value)}
+                            placeholder="Ví dụ: 500,000,000"
+                            className="w-full bg-white border border-slate-200 rounded-2xl py-4 px-6 text-slate-900 font-bold focus:ring-2 focus:ring-sky-500 outline-none transition-all"
+                          />
+                          <Landmark className="absolute right-6 top-1/2 -translate-y-1/2 text-slate-300" size={20} />
+                        </div>
+                     </div>
+
+                     <button 
+                        onClick={calculateTax}
+                        className="w-full bg-slate-900 text-white font-black py-5 rounded-2xl hover:bg-sky-600 transition-all uppercase tracking-widest text-xs flex items-center justify-center gap-3 shadow-xl"
+                     >
+                        TÍNH KẾT QUẢ <ArrowRight size={18} />
+                     </button>
+                  </div>
+
+                  <div className="bg-white rounded-3xl p-10 flex flex-col justify-center items-center text-center border border-slate-100 shadow-inner">
+                     {estimatedTax !== null ? (
+                        <>
+                          <span className="text-slate-400 text-[10px] font-black uppercase tracking-widest mb-4">Lệ phí trước bạ ước tính</span>
+                          <span className="text-4xl font-black text-sky-600 mb-6 tracking-tight">{formatCurrency(estimatedTax)}</span>
+                          <p className="text-slate-500 text-xs leading-relaxed max-w-[200px]">
+                            *Đây là con số tạm tính dựa trên tỷ lệ <strong>{carType === 'old' ? '2%' : '10%'}</strong>. Giá trị tính thuế thực tế dựa trên bảng giá của Bộ Tài Chính.
+                          </p>
+                        </>
+                     ) : (
+                        <div className="opacity-40 flex flex-col items-center">
+                           <Calculator size={64} className="mb-4 text-slate-300" />
+                           <p className="text-slate-400 font-bold text-sm uppercase tracking-widest">Chưa có dữ liệu tính</p>
+                        </div>
+                     )}
+                  </div>
+               </div>
+            </div>
+
+            {/* FAQs */}
+            <div className="flex items-center gap-4 mb-10">
+              <div className="w-14 h-14 bg-sky-50 text-sky-600 rounded-2xl flex items-center justify-center border border-sky-100">
+                <HelpCircle size={28} />
+              </div>
+              <h2 className="text-2xl font-black text-slate-900 uppercase tracking-tight">Câu Hỏi Thường Gặp</h2>
             </div>
             
-            <div className="space-y-4">
+            <div className="space-y-6">
               {FAQ_ITEMS.map((item, index) => (
                 <div 
                   key={index} 
-                  className={`border rounded-xl transition-all duration-300 ${openFaqIndex === index ? 'border-sky-200 shadow-md bg-white' : 'border-gray-100 bg-gray-50'}`}
+                  className={`group border rounded-3xl transition-all duration-500 overflow-hidden ${openFaqIndex === index ? 'border-sky-200 shadow-xl bg-white scale-[1.02]' : 'border-slate-100 bg-slate-50'}`}
                 >
                   <button
-                    className="w-full flex justify-between items-center p-5 text-left focus:outline-none"
+                    className="w-full flex justify-between items-center p-8 text-left focus:outline-none"
                     onClick={() => toggleFaq(index)}
                   >
-                    <span className={`font-bold text-lg ${openFaqIndex === index ? 'text-sky-700' : 'text-slate-700'}`}>
+                    <span className={`font-black text-lg transition-colors ${openFaqIndex === index ? 'text-sky-700' : 'text-slate-700'}`}>
                       {item.question}
                     </span>
-                    {openFaqIndex === index ? (
-                      <ChevronUp className="text-sky-500 shrink-0" size={20} />
-                    ) : (
-                      <ChevronDown className="text-gray-400 shrink-0" size={20} />
-                    )}
+                    <div className={`w-8 h-8 rounded-full flex items-center justify-center transition-all ${openFaqIndex === index ? 'bg-sky-600 text-white rotate-180' : 'bg-slate-200 text-slate-500'}`}>
+                      <ChevronDown size={18} />
+                    </div>
                   </button>
                   <div 
-                    className={`px-5 overflow-hidden transition-all duration-300 ease-in-out ${
-                      openFaqIndex === index ? 'max-h-96 pb-5 opacity-100' : 'max-h-0 opacity-0'
+                    className={`px-8 overflow-hidden transition-all duration-500 ease-in-out ${
+                      openFaqIndex === index ? 'max-h-[500px] pb-10 opacity-100' : 'max-h-0 opacity-0'
                     }`}
                   >
-                    <div className="text-slate-600 leading-relaxed border-t border-gray-100 pt-4">
+                    <div className="text-slate-600 leading-relaxed border-t border-slate-100 pt-8 font-light text-lg">
                       {item.answer}
                     </div>
                   </div>
@@ -69,15 +166,16 @@ const Consultation: React.FC = () => {
               ))}
             </div>
 
-            <div className="mt-12 bg-sky-50 border border-sky-100 rounded-xl p-8 text-center">
-              <h3 className="text-xl font-bold text-slate-800 mb-2">Bạn có câu hỏi khác?</h3>
-              <p className="text-slate-600 mb-6">Đội ngũ chuyên gia của chúng tôi sẵn sàng giải đáp miễn phí cho riêng trường hợp của bạn.</p>
-              <div className="flex justify-center gap-4">
-                 <a href={`https://zalo.me/${cleanPhone}`} target="_blank" rel="noopener noreferrer" className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition shadow-md flex items-center gap-2">
-                    Chat Zalo
+            <div className="mt-16 bg-gradient-to-br from-sky-600 to-indigo-700 rounded-[3rem] p-12 text-center text-white shadow-2xl relative overflow-hidden">
+              <div className="absolute -top-10 -right-10 w-40 h-40 bg-white/10 rounded-full blur-2xl"></div>
+              <h3 className="text-2xl md:text-3xl font-black mb-4">Trường hợp của bạn phức tạp hơn?</h3>
+              <p className="text-sky-100 mb-10 font-light text-lg max-w-xl mx-auto">Chuyên gia của SangTenXe24h sẵn sàng tư vấn miễn phí cho các hồ sơ xe qua nhiều đời chủ hoặc mất giấy tờ.</p>
+              <div className="flex flex-wrap justify-center gap-6">
+                 <a href={`https://zalo.me/${cleanPhone}`} target="_blank" rel="noopener noreferrer" className="bg-white text-sky-700 font-black py-4 px-10 rounded-2xl transition shadow-xl hover:scale-105 flex items-center gap-3 uppercase text-xs tracking-widest">
+                    <MessageCircle size={20} /> Chat Zalo Ngay
                  </a>
-                 <a href={`tel:${cleanPhone}`} className="bg-white border border-gray-300 hover:bg-gray-50 text-slate-700 font-bold py-3 px-6 rounded-lg transition shadow-md flex items-center gap-2">
-                    Gọi Hotline
+                 <a href={`tel:${cleanPhone}`} className="bg-slate-900 text-white font-black py-4 px-10 rounded-2xl transition shadow-xl hover:bg-slate-800 flex items-center gap-3 uppercase text-xs tracking-widest">
+                    Hotline: {COMPANY_PHONE}
                  </a>
               </div>
             </div>
@@ -85,34 +183,45 @@ const Consultation: React.FC = () => {
 
           {/* Sidebar Info */}
           <div className="lg:w-1/3">
-             <div className="bg-white border border-gray-200 rounded-2xl shadow-lg p-6 sticky top-24">
-                <h3 className="text-lg font-bold text-slate-800 mb-6 flex items-center gap-2 pb-4 border-b border-gray-100">
-                   <FileQuestion className="text-sky-500" />
-                   Chủ đề tư vấn hot
+             <div className="bg-white border border-slate-100 rounded-[2.5rem] shadow-2xl p-10 sticky top-28">
+                <h3 className="text-xl font-black text-slate-900 mb-10 flex items-center gap-3 pb-6 border-b border-slate-50">
+                   <div className="w-2 h-6 bg-sky-500 rounded-full"></div>
+                   Chủ đề tư vấn HOT
                 </h3>
                 
-                <ul className="space-y-4">
+                <ul className="space-y-8">
                    <li className="group cursor-pointer">
-                      <div className="font-semibold text-slate-700 group-hover:text-sky-600 transition">Thủ tục sang tên không chính chủ</div>
-                      <p className="text-xs text-slate-400 mt-1">Cập nhật quy định mới nhất 2025</p>
+                      <div className="flex items-center gap-3 mb-2">
+                        <span className="w-6 h-6 rounded-full bg-sky-50 text-sky-600 flex items-center justify-center text-[10px] font-black">01</span>
+                        <div className="font-black text-slate-800 group-hover:text-sky-600 transition text-sm uppercase tracking-tight">Sang tên không chính chủ</div>
+                      </div>
+                      <p className="text-xs text-slate-400 ml-9 font-medium">Cập nhật quy trình gỡ bỏ rắc rối Thông tư 24 mới nhất.</p>
                    </li>
                    <li className="group cursor-pointer">
-                      <div className="font-semibold text-slate-700 group-hover:text-sky-600 transition">Biển số định danh là gì?</div>
-                      <p className="text-xs text-slate-400 mt-1">Hướng dẫn giữ biển số đẹp cho xe mới</p>
+                      <div className="flex items-center gap-3 mb-2">
+                        <span className="w-6 h-6 rounded-full bg-sky-50 text-sky-600 flex items-center justify-center text-[10px] font-black">02</span>
+                        <div className="font-black text-slate-800 group-hover:text-sky-600 transition text-sm uppercase tracking-tight">Biển số định danh 2025</div>
+                      </div>
+                      <p className="text-xs text-slate-400 ml-9 font-medium">Làm sao để giữ lại biển số đẹp khi bán xe?</p>
                    </li>
                    <li className="group cursor-pointer">
-                      <div className="font-semibold text-slate-700 group-hover:text-sky-600 transition">Phí trước bạ xe cũ 2025</div>
-                      <p className="text-xs text-slate-400 mt-1">Cách tính thuế chính xác tiết kiệm</p>
+                      <div className="flex items-center gap-3 mb-2">
+                        <span className="w-6 h-6 rounded-full bg-sky-50 text-sky-600 flex items-center justify-center text-[10px] font-black">03</span>
+                        <div className="font-black text-slate-800 group-hover:text-sky-600 transition text-sm uppercase tracking-tight">Rút hồ sơ gốc tỉnh lẻ</div>
+                      </div>
+                      <p className="text-xs text-slate-400 ml-9 font-medium">Thời gian và thủ tục rút hồ sơ xe biển tỉnh về TPHCM.</p>
                    </li>
                 </ul>
 
-                <div className="mt-8 pt-6 border-t border-gray-100">
-                   <div className="bg-slate-900 rounded-xl p-5 text-white text-center">
-                      <MessageCircle className="mx-auto mb-3 text-sky-400" size={32} />
-                      <p className="font-bold text-lg mb-1">Tư vấn trực tuyến</p>
-                      <p className="text-sm text-slate-400 mb-4">Chúng tôi đang online để hỗ trợ bạn ngay</p>
-                      <a href={`https://zalo.me/${cleanPhone}`} target="_blank" rel="noopener noreferrer" className="block w-full py-2 bg-sky-600 hover:bg-sky-500 rounded font-bold text-sm transition">
-                        Bắt đầu chat ngay
+                <div className="mt-12 pt-10 border-t border-slate-50">
+                   <div className="bg-slate-900 rounded-[2rem] p-8 text-white text-center shadow-xl">
+                      <div className="w-16 h-16 bg-sky-600 rounded-2xl mx-auto mb-6 flex items-center justify-center shadow-lg">
+                        <MessageCircle size={32} />
+                      </div>
+                      <p className="font-black text-lg mb-2 uppercase tracking-tight">Tư Vấn Online</p>
+                      <p className="text-xs text-slate-400 mb-8 font-medium">Chúng tôi đang trực tuyến để trả lời bạn ngay lập tức.</p>
+                      <a href={`https://zalo.me/${cleanPhone}`} target="_blank" rel="noopener noreferrer" className="block w-full py-4 bg-sky-600 hover:bg-sky-500 rounded-xl font-black text-[10px] uppercase tracking-[0.2em] transition">
+                        Bắt đầu chat
                       </a>
                    </div>
                 </div>

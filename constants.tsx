@@ -1,5 +1,5 @@
 
-import { Car, FileText, Repeat, ShieldCheck, Truck, ClipboardList, PenTool } from 'lucide-react';
+import { Car, FileText, Repeat, ShieldCheck, Truck, ClipboardList, PenTool, Search, Landmark, Shield } from 'lucide-react';
 import { ServiceItem, NavItem, BlogPost, FaqItem } from './types';
 
 export const COMPANY_PHONE = "0373 823 874";
@@ -18,9 +18,10 @@ export const NAV_ITEMS: NavItem[] = [
       { label: "Cấp lại đăng ký xe bị mất", path: "/dich-vu/cap-doi" },
       { label: "Dịch vụ làm lại biển số", path: "/dich-vu/bien-so" },
       { label: "Cà số máy & Đăng kiểm", path: "/dich-vu/dang-kiem" },
+      { label: "Giám định & Kiểm tra gốc", path: "/dich-vu/giam-dinh" },
     ]
   },
-  { label: "Tư vấn", path: "/tu-van" },
+  { label: "Công cụ", path: "/tu-van" },
   { label: "Blog xe", path: "/blog" },
   { label: "Liên hệ", path: "/lien-he" },
 ];
@@ -41,6 +42,13 @@ export const SERVICES: ServiceItem[] = [
     icon: FileText
   },
   {
+    id: "giam-dinh",
+    title: "Kiểm tra gốc gác & Giám định tình trạng xe cũ",
+    description: "Dịch vụ check gốc xe, kiểm tra tình trạng pháp lý, tranh chấp hoặc xe tang vật. Hỗ trợ giám định tình trạng kỹ thuật và định giá xe cũ chính xác trước khi giao dịch.",
+    image: "https://mercedesphumyhung.com.vn/wp-content/uploads/2024/10/audi2.jpg",
+    icon: Search
+  },
+  {
     id: "cap-doi",
     title: "Làm lại đăng ký xe bị mất - Cấp lại Cà vẹt xe hỏa tốc",
     description: "Bạn cần làm lại giấy tờ xe bị mất? Dịch vụ cấp lại đăng ký xe (cà vẹt) bị mất nhanh nhất tại TPHCM. Thủ tục đơn giản, không cần chờ đợi lâu, giao kết quả tận nơi cho khách hàng.",
@@ -48,25 +56,18 @@ export const SERVICES: ServiceItem[] = [
     icon: Repeat
   },
   {
-    id: "bien-so",
-    title: "Cấp lại biển số xe bị mất & Đăng ký biển số định danh",
-    description: "Tư vấn làm thủ tục biển số định danh 2025. Dịch vụ cấp lại biển số xe bị mất, biển số mờ, gãy hoặc đổi sang biển dài. Nhận ép biển số chống nước inox cao cấp bền đẹp lấy liền.",
-    image: "https://mercedesphumyhung.com.vn/wp-content/uploads/2024/10/audi2.jpg",
-    icon: ShieldCheck
+    id: "bao-hiem",
+    title: "Bảo hiểm xe cơ giới & Phí đường bộ hỏa tốc",
+    description: "Cung cấp các loại bảo hiểm bắt buộc TNDS, bảo hiểm thân vỏ (hai chiều) cho ô tô và xe máy. Hỗ trợ đóng phí đường bộ, xử lý bồi thường bảo hiểm nhanh chóng.",
+    image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=800",
+    icon: Shield
   },
   {
     id: "dang-kiem",
-    title: "Cà số khung số máy tại nhà & Hỗ trợ Đăng kiểm xe ô tô",
+    title: "Cà số khung số máy tại nhà & Hỗ trợ Đăng kiểm xe",
     description: "Cung cấp thợ cà số khung số máy chuyên nghiệp tận nhà tại TP.HCM cho ô tô và xe máy. Hỗ trợ đưa xe đi đăng kiểm, xử lý các lỗi đăng kiểm nhanh chóng, đảm bảo xe lưu hành đúng quy định.",
     image: "https://media.vietnamplus.vn/images/7255a701687d11cb8c6bbc58a6c80785d45dd972489b8630a840aa247a41769c10d29387ecb7ce29b9c4716bcb8e355f7c8ad008c57673c6c1582d78e0e2a8301039b653f7228b0042d704e48349bb259c6b3b4e826641f2a5ff22c7cd96e7c0/5c13378d057c480a8e98c64a413e20613682161636517973.jpg",
     icon: PenTool
-  },
-  {
-    id: "van-tai",
-    title: "Đăng ký phù hiệu xe tải & Giấy phép kinh doanh vận tải",
-    description: "Làm phù hiệu xe tải, xe hợp đồng hỏa tốc. Tư vấn thành lập hộ kinh doanh, HTX vận tải và cấp giấy phép kinh doanh vận tải bằng xe ô tô trọn gói giá tốt nhất.",
-    image: "https://cdn.dailyxe.com.vn/image/toyota-prius-2025-338480j.jpg?ref=bonboncar.vn",
-    icon: Truck
   }
 ];
 
