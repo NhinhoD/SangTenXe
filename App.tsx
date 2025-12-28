@@ -1,6 +1,6 @@
 
 import React, { useEffect } from 'react';
-import { HashRouter as Router, Routes, Route, useLocation, Navigate } from 'react-router-dom';
+import { BrowserRouter, HashRouter, Routes, Route, useLocation, Navigate } from 'react-router-dom';
 import Header from './components/Header.tsx';
 import Footer from './components/Footer.tsx';
 import Home from './pages/Home.tsx';
@@ -18,6 +18,19 @@ const ScrollToTop = () => {
     window.scrollTo(0, 0);
   }, [pathname]);
   return null;
+};
+
+// Component Router thông minh
+const SmartRouter: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  // Chỉ dùng HashRouter khi ở trong môi trường Google AI Studio (để tránh lỗi 404 preview)
+  const isAIStudio = window.location.hostname.includes('google.com');
+
+  if (isAIStudio) {
+    return <HashRouter>{children}</HashRouter>;
+  }
+  
+  // Localhost và Production (Vercel) sẽ dùng BrowserRouter để có URL sạch / không dấu #
+  return <BrowserRouter>{children}</BrowserRouter>;
 };
 
 const AppContent: React.FC = () => {
@@ -64,10 +77,10 @@ const AppContent: React.FC = () => {
 
 const App: React.FC = () => {
   return (
-    <Router>
+    <SmartRouter>
       <ScrollToTop />
       <AppContent />
-    </Router>
+    </SmartRouter>
   );
 };
 
