@@ -12,7 +12,7 @@ const Consultation: React.FC = () => {
   const [estimatedTax, setEstimatedTax] = useState<number | null>(null);
 
   useEffect(() => {
-    document.title = "Tư Vấn & Công Cụ Tính Thuế Giấy Tờ Xe - SangTenXe24h";
+    document.title = "Sang Tên Ô Tô Mất Bao Lâu? Ở Đâu? Chi Phí? - Tư Vấn SangTenXe24h";
   }, []);
 
   const calculateTax = () => {
@@ -41,10 +41,10 @@ const Consultation: React.FC = () => {
       <div className="bg-slate-950 py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-sky-900/30 to-transparent"></div>
         <div className="container mx-auto px-4 text-center relative z-10">
-          <span className="text-sky-400 font-black uppercase tracking-[0.3em] text-xs mb-4 block">Hỗ trợ pháp lý & Công cụ</span>
-          <h1 className="text-4xl md:text-6xl font-black text-white mb-6">Tư Vấn & Hỏi Đáp</h1>
+          <span className="text-sky-400 font-black uppercase tracking-[0.3em] text-xs mb-4 block">Hỗ trợ pháp lý & Dịch vụ hồ sơ xe ô tô</span>
+          <h1 className="text-4xl md:text-6xl font-black text-white mb-6">Tư Vấn Giấy Tờ Xe Ô Tô</h1>
           <p className="text-slate-400 max-w-2xl mx-auto text-lg font-light leading-relaxed">
-            Mọi thắc mắc về sang tên, rút hồ sơ, biển số định danh mới nhất 2025 đều được giải đáp tại đây.
+            Giải đáp mọi thắc mắc về sang tên ô tô mất bao lâu, ở đâu, cần giấy tờ gì và chi phí sang tên ô tô 2025.
           </p>
         </div>
       </div>
@@ -62,33 +62,33 @@ const Consultation: React.FC = () => {
                     <Calculator size={28} />
                   </div>
                   <div>
-                    <h2 className="text-2xl font-black text-slate-900 leading-tight">Tính Thuế Trước Bạ Tạm Tính</h2>
-                    <p className="text-slate-500 text-sm font-medium">Ước tính lệ phí cần nộp khi sang tên xe</p>
+                    <h2 className="text-2xl font-black text-slate-900 leading-tight">Chi phí sang tên ô tô tạm tính</h2>
+                    <p className="text-slate-500 text-sm font-medium">Ước tính lệ phí trước bạ khi làm giấy tờ xe ô tô tphcm</p>
                   </div>
                </div>
 
                <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                   <div className="space-y-8">
                      <div>
-                        <label className="block text-slate-700 text-[10px] font-black uppercase tracking-widest mb-3 ml-1">Loại giao dịch</label>
+                        <label className="block text-slate-700 text-[10px] font-black uppercase tracking-widest mb-3 ml-1">Loại xe đăng ký</label>
                         <div className="flex bg-white p-1 rounded-2xl border border-slate-200">
                            <button 
                              onClick={() => setCarType('old')}
                              className={`flex-1 py-3 rounded-xl text-xs font-black transition-all ${carType === 'old' ? 'bg-sky-600 text-white shadow-md' : 'text-slate-400 hover:text-sky-600'}`}
                            >
-                             XE CŨ (SANG TÊN)
+                             SANG TÊN XE CŨ
                            </button>
                            <button 
                              onClick={() => setCarType('new')}
                              className={`flex-1 py-3 rounded-xl text-xs font-black transition-all ${carType === 'new' ? 'bg-sky-600 text-white shadow-md' : 'text-slate-400 hover:text-sky-600'}`}
                            >
-                             XE MỚI ĐĂNG KÝ
+                             ĐĂNG KÝ XE MỚI
                            </button>
                         </div>
                      </div>
 
                      <div>
-                        <label className="block text-slate-700 text-[10px] font-black uppercase tracking-widest mb-3 ml-1">Giá trị xe (VND)</label>
+                        <label className="block text-slate-700 text-[10px] font-black uppercase tracking-widest mb-3 ml-1">Giá trị ô tô thực tế (VND)</label>
                         <div className="relative">
                           <input 
                             type="text" 
@@ -105,23 +105,23 @@ const Consultation: React.FC = () => {
                         onClick={calculateTax}
                         className="w-full bg-slate-900 text-white font-black py-5 rounded-2xl hover:bg-sky-600 transition-all uppercase tracking-widest text-xs flex items-center justify-center gap-3 shadow-xl"
                      >
-                        TÍNH KẾT QUẢ <ArrowRight size={18} />
+                        TÍNH CHI PHÍ <ArrowRight size={18} />
                      </button>
                   </div>
 
                   <div className="bg-white rounded-3xl p-10 flex flex-col justify-center items-center text-center border border-slate-100 shadow-inner">
                      {estimatedTax !== null ? (
                         <>
-                          <span className="text-slate-400 text-[10px] font-black uppercase tracking-widest mb-4">Lệ phí trước bạ ước tính</span>
+                          <span className="text-slate-400 text-[10px] font-black uppercase tracking-widest mb-4">Thuế trước bạ dự kiến</span>
                           <span className="text-4xl font-black text-sky-600 mb-6 tracking-tight">{formatCurrency(estimatedTax)}</span>
                           <p className="text-slate-500 text-xs leading-relaxed max-w-[200px]">
-                            *Đây là con số tạm tính dựa trên tỷ lệ <strong>{carType === 'old' ? '2%' : '10%'}</strong>. Giá trị tính thuế thực tế dựa trên bảng giá của Bộ Tài Chính.
+                            *Đây là con số tạm tính cho **sang tên ô tô**. Liên hệ SangTenXe24h để làm hồ sơ xe ô tô trọn gói chính xác nhất.
                           </p>
                         </>
                      ) : (
                         <div className="opacity-40 flex flex-col items-center">
                            <Calculator size={64} className="mb-4 text-slate-300" />
-                           <p className="text-slate-400 font-bold text-sm uppercase tracking-widest">Chưa có dữ liệu tính</p>
+                           <p className="text-slate-400 font-bold text-sm uppercase tracking-widest">Nhập giá xe để tính</p>
                         </div>
                      )}
                   </div>
@@ -133,7 +133,7 @@ const Consultation: React.FC = () => {
               <div className="w-14 h-14 bg-sky-50 text-sky-600 rounded-2xl flex items-center justify-center border border-sky-100">
                 <HelpCircle size={28} />
               </div>
-              <h2 className="text-2xl font-black text-slate-900 uppercase tracking-tight">Câu Hỏi Thường Gặp</h2>
+              <h2 className="text-2xl font-black text-slate-900 uppercase tracking-tight">Thủ Tục Giấy Tờ Xe Ô Tô</h2>
             </div>
             
             <div className="space-y-6">
@@ -165,20 +165,6 @@ const Consultation: React.FC = () => {
                 </div>
               ))}
             </div>
-
-            <div className="mt-16 bg-gradient-to-br from-sky-600 to-indigo-700 rounded-[3rem] p-12 text-center text-white shadow-2xl relative overflow-hidden">
-              <div className="absolute -top-10 -right-10 w-40 h-40 bg-white/10 rounded-full blur-2xl"></div>
-              <h3 className="text-2xl md:text-3xl font-black mb-4">Trường hợp của bạn phức tạp hơn?</h3>
-              <p className="text-sky-100 mb-10 font-light text-lg max-w-xl mx-auto">Chuyên gia của SangTenXe24h sẵn sàng tư vấn miễn phí cho các hồ sơ xe qua nhiều đời chủ hoặc mất giấy tờ.</p>
-              <div className="flex flex-wrap justify-center gap-6">
-                 <a href={`https://zalo.me/${cleanPhone}`} target="_blank" rel="noopener noreferrer" className="bg-white text-sky-700 font-black py-4 px-10 rounded-2xl transition shadow-xl hover:scale-105 flex items-center gap-3 uppercase text-xs tracking-widest">
-                    <MessageCircle size={20} /> Chat Zalo Ngay
-                 </a>
-                 <a href={`tel:${cleanPhone}`} className="bg-slate-900 text-white font-black py-4 px-10 rounded-2xl transition shadow-xl hover:bg-slate-800 flex items-center gap-3 uppercase text-xs tracking-widest">
-                    Hotline: {COMPANY_PHONE}
-                 </a>
-              </div>
-            </div>
           </div>
 
           {/* Sidebar Info */}
@@ -186,42 +172,38 @@ const Consultation: React.FC = () => {
              <div className="bg-white border border-slate-100 rounded-[2.5rem] shadow-2xl p-10 sticky top-28">
                 <h3 className="text-xl font-black text-slate-900 mb-10 flex items-center gap-3 pb-6 border-b border-slate-50">
                    <div className="w-2 h-6 bg-sky-500 rounded-full"></div>
-                   Chủ đề tư vấn HOT
+                   Nhu Cầu Phổ Biến
                 </h3>
                 
                 <ul className="space-y-8">
                    <li className="group cursor-pointer">
                       <div className="flex items-center gap-3 mb-2">
                         <span className="w-6 h-6 rounded-full bg-sky-50 text-sky-600 flex items-center justify-center text-[10px] font-black">01</span>
-                        <div className="font-black text-slate-800 group-hover:text-sky-600 transition text-sm uppercase tracking-tight">Sang tên không chính chủ</div>
+                        <div className="font-black text-slate-800 group-hover:text-sky-600 transition text-sm uppercase tracking-tight">Sang tên ô tô nhanh</div>
                       </div>
-                      <p className="text-xs text-slate-400 ml-9 font-medium">Cập nhật quy trình gỡ bỏ rắc rối Thông tư 24 mới nhất.</p>
+                      <p className="text-xs text-slate-400 ml-9 font-medium">Dịch vụ sang tên ô tô tphcm hỏa tốc lấy ngay.</p>
                    </li>
                    <li className="group cursor-pointer">
                       <div className="flex items-center gap-3 mb-2">
                         <span className="w-6 h-6 rounded-full bg-sky-50 text-sky-600 flex items-center justify-center text-[10px] font-black">02</span>
-                        <div className="font-black text-slate-800 group-hover:text-sky-600 transition text-sm uppercase tracking-tight">Biển số định danh 2025</div>
+                        <div className="font-black text-slate-800 group-hover:text-sky-600 transition text-sm uppercase tracking-tight">Đổi biển số ô tô tphcm</div>
                       </div>
-                      <p className="text-xs text-slate-400 ml-9 font-medium">Làm sao để giữ lại biển số đẹp khi bán xe?</p>
+                      <p className="text-xs text-slate-400 ml-9 font-medium">Cấp lại biển số ô tô bị mất hoặc đổi biển định danh.</p>
                    </li>
                    <li className="group cursor-pointer">
                       <div className="flex items-center gap-3 mb-2">
                         <span className="w-6 h-6 rounded-full bg-sky-50 text-sky-600 flex items-center justify-center text-[10px] font-black">03</span>
-                        <div className="font-black text-slate-800 group-hover:text-sky-600 transition text-sm uppercase tracking-tight">Rút hồ sơ gốc tỉnh lẻ</div>
+                        <div className="font-black text-slate-800 group-hover:text-sky-600 transition text-sm uppercase tracking-tight">Làm giấy tờ xe ô tô sài gòn</div>
                       </div>
-                      <p className="text-xs text-slate-400 ml-9 font-medium">Thời gian và thủ tục rút hồ sơ xe biển tỉnh về TPHCM.</p>
+                      <p className="text-xs text-slate-400 ml-9 font-medium">Dịch vụ hồ sơ xe ô tô trọn gói, an toàn tuyệt đối.</p>
                    </li>
                 </ul>
 
                 <div className="mt-12 pt-10 border-t border-slate-50">
                    <div className="bg-slate-900 rounded-[2rem] p-8 text-white text-center shadow-xl">
-                      <div className="w-16 h-16 bg-sky-600 rounded-2xl mx-auto mb-6 flex items-center justify-center shadow-lg">
-                        <MessageCircle size={32} />
-                      </div>
-                      <p className="font-black text-lg mb-2 uppercase tracking-tight">Tư Vấn Online</p>
-                      <p className="text-xs text-slate-400 mb-8 font-medium">Chúng tôi đang trực tuyến để trả lời bạn ngay lập tức.</p>
-                      <a href={`https://zalo.me/${cleanPhone}`} target="_blank" rel="noopener noreferrer" className="block w-full py-4 bg-sky-600 hover:bg-sky-500 rounded-xl font-black text-[10px] uppercase tracking-[0.2em] transition">
-                        Bắt đầu chat
+                      <p className="font-black text-lg mb-2 uppercase tracking-tight">Tư Vấn Giấy Tờ Xe</p>
+                      <a href={`tel:${cleanPhone}`} className="block w-full py-4 bg-sky-600 hover:bg-sky-500 rounded-xl font-black text-[10px] uppercase tracking-[0.2em] transition">
+                        Gọi {COMPANY_PHONE}
                       </a>
                    </div>
                 </div>

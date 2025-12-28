@@ -11,33 +11,33 @@ const Home: React.FC = () => {
 
   const heroSlides = [
     {
-      title: "Dịch Vụ Sang Tên Xe Ô Tô & Máy",
-      highlight: "Sang Tên Xe TPHCM Uy Tín",
-      desc: "Chuyên giải quyết các thủ tục sang tên xe, sang tên chính chủ và giữ biển số định danh theo luật mới 2025. Hỗ trợ tận nhà, bảo mật tuyệt đối.",
+      title: "Dịch Vụ Sang Tên Ô Tô Trọn Gói",
+      highlight: "Sang Tên Xe Ô Tô Sài Gòn Uy Tín",
+      desc: "Chuyên dịch vụ sang tên ô tô tphcm hỏa tốc. Giải quyết thủ tục sang tên ô tô không chính chủ, sang tên ô tô nhanh trong 3-5 ngày, hỗ trợ tận nhà 24/7.",
       image: "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&q=80&w=1600",
-      cta: "Báo Giá Sang Tên",
+      cta: "Báo Giá Sang Tên Ô Tô",
       link: "/dich-vu/sang-ten"
     },
     {
-      title: "Rút Hồ Sơ Gốc Xe Toàn Quốc",
-      highlight: "Rút Hồ Sơ Gốc Nhanh Gọn",
-      desc: "Nhận rút hồ sơ gốc xe ô tô, xe máy từ tất cả các tỉnh thành về TP.HCM. Thủ tục rút hồ sơ gốc xe chuyên nghiệp, giá rẻ nhất thị trường.",
-      image: "https://images.unsplash.com/photo-1549194388-f61be84a6e9e?auto=format&fit=crop&q=80&w=1600",
-      cta: "Tư Vấn Rút Gốc",
-      link: "/dich-vu/rut-ho-so"
+      title: "Cấp Lại Biển Số Ô Tô TPHCM",
+      highlight: "Đổi Biển Số Ô Tô Nhanh Gọn",
+      desc: "Mất biển số ô tô làm lại hỏa tốc. Dịch vụ đổi biển số xe ô tô sài gòn sang biển định danh 2025. Thủ tục cấp lại đăng ký xe ô tô bị mất đơn giản nhất.",
+      image: "https://images.unsplash.com/photo-1632833239869-a37e3a5806d2?auto=format&fit=crop&q=80&w=1600",
+      cta: "Làm Lại Biển Số",
+      link: "/dich-vu/bien-so"
     },
     {
-      title: "Làm Lại Giấy Tờ Xe Bị Mất",
-      highlight: "Cấp Lại Cà vẹt Hỏa Tốc",
-      desc: "Dịch vụ làm lại cà vẹt xe bị mất, đổi biển số định danh, ép biển số inox. Phục vụ tận nơi tại Bình Thạnh và toàn bộ quận huyện Sài Gòn.",
-      image: "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&q=80&w=1600",
-      cta: "Làm Lại Giấy Tờ",
-      link: "/dich-vu/cap-doi"
+      title: "Dịch Vụ Giấy Tờ Xe Ô Tô 24h",
+      highlight: "Làm Giấy Tờ Xe Ô Tô TPHCM",
+      desc: "Nhận làm hồ sơ xe ô tô trọn gói, rút hồ sơ gốc toàn quốc. Sang tên ô tô không cần đi lại, giao kết quả tận nơi tại các quận huyện Sài Gòn.",
+      image: "https://images.unsplash.com/photo-1554224155-1696413565d3?auto=format&fit=crop&q=80&w=1600",
+      cta: "Tư Vấn Hồ Sơ",
+      link: "/dich-vu/giay-to"
     }
   ];
 
   useEffect(() => {
-    document.title = "Dịch Vụ Sang Tên Xe Ô Tô, Xe Máy & Rút Hồ Sơ Gốc | SangTenOtoSG";
+    document.title = "Dịch Vụ Sang Tên Ô Tô TPHCM | Sang Tên Xe Ô Tô Sài Gòn Trọn Gói";
     const slideInterval = setInterval(() => {
       setCurrentSlide((prev) => (prev === heroSlides.length - 1 ? 0 : prev + 1));
     }, 7000);
@@ -54,7 +54,7 @@ const Home: React.FC = () => {
       
       {/* Hero Section */}
       <section className="relative h-[500px] md:h-[700px] flex items-center justify-center overflow-hidden bg-slate-950">
-        <h1 className="sr-only">Dịch vụ sang tên xe ô tô, rút hồ sơ gốc, làm lại đăng ký xe và cà số máy tại TPHCM</h1>
+        <h1 className="sr-only">Dịch vụ sang tên ô tô tphcm, sang tên xe ô tô sài gòn trọn gói, làm giấy tờ xe ô tô nhanh</h1>
         
         {heroSlides.map((slide, index) => (
           <div 
@@ -74,7 +74,7 @@ const Home: React.FC = () => {
               <div className={`${index === currentSlide ? 'animate-fade-up' : 'opacity-0'}`}>
                 <div className="flex items-center gap-2 mb-4">
                   <span className="w-8 h-[2px] bg-sky-500"></span>
-                  <span className="text-sky-400 text-[10px] font-bold uppercase tracking-[0.3em]">Hơn 10 năm kinh nghiệm pháp lý xe</span>
+                  <span className="text-sky-400 text-[10px] font-bold uppercase tracking-[0.3em]">Chuyên gia sang tên ô tô 24h</span>
                 </div>
                 <h2 className="text-3xl md:text-6xl font-black mb-6 leading-tight tracking-tight drop-shadow-lg max-w-3xl">
                   {slide.title} <br/>
@@ -98,7 +98,7 @@ const Home: React.FC = () => {
                       <Phone size={22} className="animate-pulse" />
                     </div>
                     <div>
-                      <span className="block text-[8px] uppercase font-bold text-slate-400 tracking-widest">Hotline 24/7</span>
+                      <span className="block text-[8px] uppercase font-bold text-slate-400 tracking-widest">Tư vấn 24/7</span>
                       <span className="text-lg font-black text-white">{COMPANY_PHONE}</span>
                     </div>
                   </a>
@@ -134,7 +134,7 @@ const Home: React.FC = () => {
               </div>
               <div>
                 <h4 className="font-black text-slate-800 text-sm uppercase tracking-wider">Hợp Pháp 100%</h4>
-                <p className="text-slate-500 text-[11px] font-bold">Theo đúng Thông tư 24</p>
+                <p className="text-slate-500 text-[11px] font-bold">Dịch vụ giấy tờ xe ô tô đúng luật</p>
               </div>
             </div>
             <div className="flex items-center gap-5 group">
@@ -142,8 +142,8 @@ const Home: React.FC = () => {
                 <Clock size={28} strokeWidth={1.5} />
               </div>
               <div>
-                <h4 className="font-black text-slate-800 text-sm uppercase tracking-wider">Xử Lý Hỏa Tốc</h4>
-                <p className="text-slate-500 text-[11px] font-bold">Chỉ từ 3-5 ngày làm việc</p>
+                <h4 className="font-black text-slate-800 text-sm uppercase tracking-wider">Xử Lý Nhanh</h4>
+                <p className="text-slate-500 text-[11px] font-bold">Sang tên ô tô nhanh 3-5 ngày</p>
               </div>
             </div>
             <div className="flex items-center gap-5 group">
@@ -151,8 +151,8 @@ const Home: React.FC = () => {
                 <DollarSign size={28} strokeWidth={1.5} />
               </div>
               <div>
-                <h4 className="font-black text-slate-800 text-sm uppercase tracking-wider">Giá Tốt Nhất</h4>
-                <p className="text-slate-500 text-[11px] font-bold">Không phát sinh chi phí</p>
+                <h4 className="font-black text-slate-800 text-sm uppercase tracking-wider">Chi Phí Tốt</h4>
+                <p className="text-slate-500 text-[11px] font-bold">Chi phí sang tên ô tô rẻ nhất</p>
               </div>
             </div>
           </div>
@@ -163,17 +163,17 @@ const Home: React.FC = () => {
       <section className="py-24 bg-white overflow-hidden">
         <div className="container mx-auto px-6 text-center">
           <Reveal>
-            <span className="text-sky-500 font-black uppercase tracking-widest text-[10px] mb-4 block">Quy trình chuyên nghiệp</span>
-            <h3 className="text-3xl md:text-5xl font-black text-slate-900 mb-16 leading-tight">Hoàn Tất Thủ Tục <br/> <span className="text-sky-600">Trong 3 Bước Đơn Giản</span></h3>
+            <span className="text-sky-500 font-black uppercase tracking-widest text-[10px] mb-4 block">Quy trình sang tên chuyên nghiệp</span>
+            <h3 className="text-3xl md:text-5xl font-black text-slate-900 mb-16 leading-tight">Sang Tên Xe Ô Tô TPHCM <br/> <span className="text-sky-600">Với 3 Bước Đơn Giản</span></h3>
           </Reveal>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 relative">
             <div className="hidden md:block absolute top-1/4 left-[15%] right-[15%] h-[2px] bg-slate-100 -z-10"></div>
             
             {[
-              { icon: MessageCircle, title: "Tư Vấn Miễn Phí", desc: "Liên hệ Hotline hoặc Zalo, chuyên viên sẽ tư vấn giải pháp tối ưu cho hồ sơ của bạn." },
-              { icon: FileCheck, title: "Tiếp Nhận Hồ Sơ", desc: "Chúng tôi hỗ trợ nhận hồ sơ tận nơi. Bạn không cần phải đi lại hay chờ đợi tại cơ quan công an." },
-              { icon: Trophy, title: "Bàn Giao Kết Quả", desc: "Sau khi hoàn thành, kết quả (Cà vẹt, Biển số) sẽ được giao tận nhà cho quý khách." }
+              { icon: MessageCircle, title: "Tư Vấn Miễn Phí", desc: "Tư vấn sang tên ô tô cần giấy tờ gì và báo giá trọn gói hỏa tốc." },
+              { icon: FileCheck, title: "Làm Hồ Sơ Xe Ô Tô", desc: "Tiếp nhận hồ sơ, làm thủ tục đăng ký xe, cấp lại biển số ô tô tận nơi." },
+              { icon: Trophy, title: "Bàn Giao Kết Quả", desc: "Giao cà vẹt và biển số mới tận nhà. Sang tên ô tô không cần khách đi lại." }
             ].map((step, i) => (
               <Reveal key={i} delay={i * 200}>
                 <div className="group flex flex-col items-center">
@@ -190,91 +190,16 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* About Section */}
-      <section className="py-24 bg-slate-50 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-sky-100/50 rounded-full blur-[120px] -mr-64 -mt-64"></div>
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="flex flex-col lg:flex-row gap-20 items-center">
-            <div className="lg:w-1/2 relative">
-              <Reveal effect="left">
-                <div className="relative max-w-lg mx-auto">
-                  <div className="grid grid-cols-2 gap-6 relative z-10">
-                    <div className="space-y-6">
-                       <img src="https://images.unsplash.com/photo-1549194388-f61be84a6e9e?auto=format&fit=crop&q=80&w=800" className="rounded-[2.5rem] shadow-2xl w-full h-80 object-cover" alt="Dịch vụ rút hồ sơ" />
-                       <div className="bg-sky-600 p-8 rounded-[2.5rem] text-white shadow-xl">
-                          <span className="text-4xl font-black block mb-2">99%</span>
-                          <p className="text-xs font-bold uppercase tracking-widest opacity-80">Khách hàng hài lòng</p>
-                       </div>
-                    </div>
-                    <div className="space-y-6 pt-12">
-                       <div className="bg-slate-900 p-8 rounded-[2.5rem] text-white shadow-xl">
-                          <Users size={32} className="text-sky-400 mb-4" />
-                          <p className="text-sm font-medium leading-relaxed">Phục vụ hơn 500 khách hàng mỗi tháng tại TPHCM.</p>
-                       </div>
-                       <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&q=80&w=800" className="rounded-[2.5rem] shadow-2xl w-full h-80 object-cover" alt="Sang tên xe chính chủ" />
-                    </div>
-                  </div>
-                </div>
-              </Reveal>
-            </div>
-            
-            <div className="lg:w-1/2">
-              <Reveal effect="right">
-                <div className="mb-10">
-                  <span className="inline-block py-2 px-4 bg-sky-100 text-sky-600 rounded-xl text-[10px] font-black uppercase tracking-widest mb-6">Chuyên gia sang tên xe số 1 TPHCM</span>
-                  <h3 className="text-4xl md:text-5xl font-black text-slate-900 mb-8 leading-[1.1]">Dịch Vụ Pháp Lý Xe <br/> <span className="text-sky-600">Uy Tín - Chuyên Nghiệp</span></h3>
-                  <p className="text-slate-600 text-lg leading-relaxed mb-8 font-light">
-                    Tại <strong>SangTenXe24h</strong>, chúng tôi không chỉ làm hồ sơ, chúng tôi cung cấp sự an tâm tuyệt đối. Mọi rắc rối về giấy tờ xe, sang tên không chính chủ hay rút hồ sơ tỉnh đều được xử lý gọn gàng.
-                  </p>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10">
-                    {[
-                      "Thủ tục sang tên đúng luật 2025",
-                      "Rút hồ sơ gốc hỏa tốc toàn quốc",
-                      "Check gốc xe, giám định pháp lý",
-                      "Cà số máy & Đăng kiểm tận nhà"
-                    ].map((item, i) => (
-                      <div key={i} className="flex items-center gap-4 bg-white p-4 rounded-2xl shadow-sm border border-slate-100">
-                        <div className="w-8 h-8 rounded-full bg-green-100 text-green-600 flex items-center justify-center shrink-0">
-                          <CheckCircle2 size={16} />
-                        </div>
-                        <span className="text-slate-800 font-bold text-sm">{item}</span>
-                      </div>
-                    ))}
-                  </div>
-                  <div className="flex flex-wrap gap-8 items-center border-t border-slate-200 pt-10">
-                    <div className="flex flex-col">
-                      <span className="text-3xl font-black text-slate-900">10+</span>
-                      <span className="text-[10px] text-slate-400 font-bold uppercase tracking-widest">Năm kinh nghiệm</span>
-                    </div>
-                    <div className="w-px h-10 bg-slate-200"></div>
-                    <div className="flex flex-col">
-                      <span className="text-3xl font-black text-slate-900">24/7</span>
-                      <span className="text-[10px] text-slate-400 font-bold uppercase tracking-widest">Hỗ trợ hotline</span>
-                    </div>
-                    <Link to="/gioi-thieu" className="ml-auto flex items-center gap-2 group">
-                       <span className="bg-sky-600 text-white w-12 h-12 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg">
-                          <ChevronRight size={20} />
-                       </span>
-                       <span className="font-black text-slate-900 text-sm uppercase tracking-widest group-hover:text-sky-600 transition-colors">Về chúng tôi</span>
-                    </Link>
-                  </div>
-                </div>
-              </Reveal>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Services Grid */}
       <section className="py-24 bg-white">
         <div className="container mx-auto px-6">
           <div className="flex flex-col md:flex-row justify-between items-end mb-16">
             <Reveal className="max-w-xl">
-              <span className="text-sky-500 font-black uppercase tracking-widest text-[10px] mb-4 block">Dịch vụ hỏa tốc 24/7</span>
-              <h3 className="text-3xl md:text-5xl font-black text-slate-900 leading-tight">Giải Pháp Giấy Tờ <br/> <span className="text-sky-600">Xe Chuyên Nghiệp</span></h3>
+              <span className="text-sky-500 font-black uppercase tracking-widest text-[10px] mb-4 block">Dịch vụ giấy tờ xe ô tô hỏa tốc</span>
+              <h3 className="text-3xl md:text-5xl font-black text-slate-900 leading-tight">Dịch Vụ Sang Tên Ô Tô <br/> <span className="text-sky-600">Sài Gòn Trọn Gói</span></h3>
             </Reveal>
             <Link to="/dich-vu" className="hidden md:flex bg-slate-900 text-white font-black py-4 px-10 rounded-2xl hover:bg-sky-600 transition-all items-center gap-3 text-xs uppercase tracking-widest shadow-xl">
-              Tất cả dịch vụ <ChevronRight size={18} />
+              Tất cả dịch vụ ô tô <ChevronRight size={18} />
             </Link>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
@@ -287,51 +212,14 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section className="py-24 bg-slate-950 text-white relative overflow-hidden">
-        <div className="absolute bottom-0 left-0 w-full h-1/2 bg-sky-600/10 blur-[100px]"></div>
-        <div className="container mx-auto px-6 text-center">
-          <Reveal>
-             <span className="text-sky-400 font-black uppercase tracking-widest text-[10px] mb-4 block italic">Cảm nhận từ khách hàng</span>
-             <h3 className="text-3xl md:text-5xl font-black mb-20 leading-tight">Hàng Ngàn Khách Hàng <br/> <span className="text-sky-500">Đã Tin Tưởng Chúng Tôi</span></h3>
-          </Reveal>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              { name: "Anh Hoàng Nam", job: "Kinh doanh xe cũ", text: "Dịch vụ rút hồ sơ gốc ở đây cực nhanh, giá cả minh bạch. Tôi đã làm hơn 20 bộ hồ sơ và rất hài lòng." },
-              { name: "Chị Minh Tuyết", job: "Nhân viên văn phòng", text: "Mình bị mất cà vẹt xe máy, liên hệ bên SangTenXe24h được hỗ trợ làm lại tận nơi, chỉ 3 ngày là có kết quả." },
-              { name: "Anh Quốc Bảo", job: "Chủ xe ô tô", text: "Thủ tục sang tên đổi chủ xe ô tô chuyên nghiệp, tư vấn nhiệt tình về biển số định danh mới. Rất uy tín!" }
-            ].map((item, i) => (
-              <Reveal key={i} delay={i * 200}>
-                <div className="bg-white/5 backdrop-blur-lg border border-white/10 p-10 rounded-[2.5rem] text-left hover:bg-white/10 transition-all duration-500">
-                  <div className="flex gap-1 text-yellow-400 mb-6">
-                    {[1,2,3,4,5].map(s => <Star key={s} size={16} fill="currentColor" />)}
-                  </div>
-                  <p className="text-slate-300 italic mb-8 leading-relaxed font-light">"{item.text}"</p>
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-full bg-sky-500/20 flex items-center justify-center text-sky-400 font-black text-lg">
-                      {item.name[0]}
-                    </div>
-                    <div>
-                      <h5 className="font-bold text-sm">{item.name}</h5>
-                      <span className="text-[10px] text-slate-500 uppercase tracking-widest font-bold">{item.job}</span>
-                    </div>
-                  </div>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Map Section */}
       <section className="py-24 bg-white">
         <div className="container mx-auto px-6">
           <div className="bg-white rounded-[3.5rem] shadow-[0_50px_100px_-20px_rgba(0,0,0,0.15)] overflow-hidden flex flex-col lg:flex-row border border-slate-50">
             <div className="lg:w-[40%] p-12 md:p-20 flex flex-col justify-center">
               <Reveal>
-                <span className="text-sky-500 font-black uppercase tracking-widest text-[10px] mb-4 block">Ghé thăm văn phòng</span>
-                <h3 className="text-3xl md:text-5xl font-black text-slate-900 mb-10 leading-tight">Văn Phòng Tại <br/> <span className="text-sky-600">Sài Gòn</span></h3>
+                <span className="text-sky-500 font-black uppercase tracking-widest text-[10px] mb-4 block">Địa chỉ sang tên ô tô tphcm</span>
+                <h3 className="text-3xl md:text-5xl font-black text-slate-900 mb-10 leading-tight">Văn Phòng <br/> <span className="text-sky-600">Sài Gòn</span></h3>
                 
                 <div className="space-y-10 mb-12">
                   <div className="flex items-start gap-6">
@@ -339,7 +227,7 @@ const Home: React.FC = () => {
                       <MapPin size={26} />
                     </div>
                     <div>
-                      <h4 className="font-black text-slate-900 text-sm mb-1 uppercase tracking-wider">Trụ sở chính</h4>
+                      <h4 className="font-black text-slate-900 text-sm mb-1 uppercase tracking-wider">Mua xe cũ sang tên ở đâu?</h4>
                       <p className="text-slate-500 text-xs leading-relaxed max-w-[220px] font-medium">{COMPANY_ADDRESS}</p>
                     </div>
                   </div>
@@ -348,7 +236,7 @@ const Home: React.FC = () => {
                       <Phone size={26} />
                     </div>
                     <div>
-                      <h4 className="font-black text-slate-900 text-sm mb-1 uppercase tracking-wider">Tư vấn hỏa tốc</h4>
+                      <h4 className="font-black text-slate-900 text-sm mb-1 uppercase tracking-wider">Dịch vụ sang tên ô tô nhanh</h4>
                       <p className="text-sky-600 text-3xl font-black tracking-tighter">{COMPANY_PHONE}</p>
                     </div>
                   </div>
@@ -356,9 +244,6 @@ const Home: React.FC = () => {
 
                 <div className="flex gap-4">
                   <Link to="/lien-he" className="bg-sky-600 hover:bg-slate-900 text-white font-black py-5 px-10 rounded-2xl transition-all uppercase tracking-widest text-[10px] shadow-lg shadow-sky-200">Liên hệ ngay</Link>
-                  <a href="https://maps.app.goo.gl/TirK5G6C877rXwE46" target="_blank" rel="noopener noreferrer" className="bg-slate-50 hover:bg-slate-200 text-slate-800 font-black py-5 px-10 rounded-2xl transition-all uppercase tracking-widest text-[10px] flex items-center gap-2 border border-slate-100">
-                    <MapIcon size={16} /> Chỉ đường
-                  </a>
                 </div>
               </Reveal>
             </div>
@@ -380,12 +265,12 @@ const Home: React.FC = () => {
         <div className="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10"></div>
         <div className="container mx-auto px-6 text-center relative z-10">
           <Reveal>
-            <h3 className="text-3xl md:text-5xl font-black text-white mb-10 leading-tight">Giải Quyết Mọi Thủ Tục Xe Ngay Hôm Nay!</h3>
+            <h3 className="text-3xl md:text-5xl font-black text-white mb-10 leading-tight">Dịch Vụ Sang Tên Ô Tô Trọn Gói Tốt Nhất Sài Gòn!</h3>
             <div className="flex flex-col sm:flex-row justify-center gap-6">
               <a href={`tel:${COMPANY_PHONE.replace(/\s/g, '')}`} className="bg-white text-sky-700 font-black py-5 px-12 rounded-2xl shadow-2xl hover:scale-105 transition-all uppercase tracking-widest text-xs flex items-center justify-center gap-3">
                 <Phone size={20} fill="currentColor" /> {COMPANY_PHONE}
               </a>
-              <Link to="/tu-van" className="bg-slate-900 text-white font-black py-5 px-12 rounded-2xl shadow-2xl hover:bg-slate-800 transition-all uppercase tracking-widest text-xs">Tính Thuế Trước Bạ</Link>
+              <Link to="/tu-van" className="bg-slate-900 text-white font-black py-5 px-12 rounded-2xl shadow-2xl hover:bg-slate-800 transition-all uppercase tracking-widest text-xs">Sang tên ô tô hết bao nhiêu?</Link>
             </div>
           </Reveal>
         </div>

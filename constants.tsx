@@ -1,5 +1,5 @@
 
-import { Car, FileText, Repeat, ShieldCheck, Truck, ClipboardList, PenTool, Search, Landmark, Shield } from 'lucide-react';
+import { Car, FileText, Repeat, ShieldCheck, Truck, ClipboardList, PenTool, Search, Landmark, Shield, Hash } from 'lucide-react';
 import { ServiceItem, NavItem, BlogPost, FaqItem } from './types';
 
 export const COMPANY_PHONE = "0373 823 874";
@@ -13,10 +13,10 @@ export const NAV_ITEMS: NavItem[] = [
     label: "Dịch vụ",
     path: "/dich-vu",
     children: [
-      { label: "Sang tên xe ô tô & máy", path: "/dich-vu/sang-ten" },
-      { label: "Rút hồ sơ gốc toàn quốc", path: "/dich-vu/rut-ho-so" },
-      { label: "Cấp lại đăng ký xe bị mất", path: "/dich-vu/cap-doi" },
-      { label: "Dịch vụ làm lại biển số", path: "/dich-vu/bien-so" },
+      { label: "Sang tên ô tô trọn gói", path: "/dich-vu/sang-ten" },
+      { label: "Rút hồ sơ gốc hỏa tốc", path: "/dich-vu/rut-ho-so" },
+      { label: "Làm giấy tờ xe ô tô", path: "/dich-vu/giay-to" },
+      { label: "Cấp lại biển số ô tô", path: "/dich-vu/bien-so" },
       { label: "Cà số máy & Đăng kiểm", path: "/dich-vu/dang-kiem" },
       { label: "Giám định & Kiểm tra gốc", path: "/dich-vu/giam-dinh" },
     ]
@@ -29,43 +29,43 @@ export const NAV_ITEMS: NavItem[] = [
 export const SERVICES: ServiceItem[] = [
   {
     id: "sang-ten",
-    title: "Dịch vụ sang tên xe ô tô và xe máy tại TPHCM uy tín",
-    description: "Chuyên thủ tục sang tên xe ô tô, xe máy trọn gói tại TP.HCM. Hỗ trợ làm giấy tờ sang tên chính chủ theo Thông tư 24, giữ biển số định danh, xử lý hồ sơ sang tên xe cũ không chính chủ hỏa tốc trong 3-5 ngày làm việc.",
+    title: "Dịch vụ sang tên ô tô trọn gói tại TPHCM nhanh nhất",
+    description: "Bạn đang tìm mua xe cũ sang tên ở đâu? SangTenXe24h cung cấp dịch vụ sang tên xe ô tô sài gòn chuyên nghiệp. Hỗ trợ sang tên ô tô không cần đi lại, giải quyết hồ sơ sang tên ô tô không chính chủ theo quy định mới nhất 2025.",
     image: "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&q=80&w=800", 
     icon: Car
   },
   {
     id: "rut-ho-so",
-    title: "Dịch vụ rút hồ sơ gốc xe ô tô, xe máy toàn quốc hỏa tốc",
-    description: "Nhận rút hồ sơ gốc xe ô tô và xe máy cho khách hàng mua xe biển tỉnh về TP.HCM. Cam kết dịch vụ rút hồ sơ gốc nhanh chóng, giá rẻ, đúng pháp luật, hỗ trợ thủ tục từ xa không cần đánh xe đi.",
+    title: "Dịch vụ hồ sơ xe ô tô & Rút hồ sơ gốc toàn quốc hỏa tốc",
+    description: "Chuyên làm hồ sơ xe ô tô, rút hồ sơ gốc xe biển tỉnh về TP.HCM. Dịch vụ rút hồ sơ gốc nhanh chóng, đúng pháp luật, cam kết bàn giao hồ sơ tận tay khách hàng trong 3-5 ngày làm việc.",
     image: "https://images.unsplash.com/photo-1554224155-1696413565d3?auto=format&fit=crop&q=80&w=800", 
     icon: FileText
   },
   {
+    id: "bien-so",
+    title: "Cấp lại biển số ô tô & Đổi biển số ô tô TPHCM hỏa tốc",
+    description: "Mất biển số ô tô làm lại ở đâu? Chúng tôi hỗ trợ cấp lại biển số ô tô, đổi biển số xe ô tô sài gòn sang biển định danh, đổi biển số ô tô từ biển vuông sang biển dài hoặc ngược lại theo yêu cầu.",
+    image: "https://images.unsplash.com/photo-1632833239869-a37e3a5806d2?auto=format&fit=crop&q=80&w=800",
+    icon: Hash
+  },
+  {
+    id: "giay-to",
+    title: "Dịch vụ làm giấy tờ xe ô tô Sài Gòn & Cấp lại đăng ký xe",
+    description: "Chuyên dịch vụ giấy tờ xe ô tô, làm lại đăng ký xe ô tô bị mất (cà vẹt) nhanh nhất TPHCM. Xử lý mọi rắc rối về giấy tờ xe ô tô cũ, làm hồ sơ xe ô tô trọn gói giá rẻ.",
+    image: "https://cdn.thuvienphapluat.vn/uploads/tintuc/2025/01/07/loi-xe-khong-chinh-chu.jpg",
+    icon: Repeat
+  },
+  {
     id: "giam-dinh",
-    title: "Kiểm tra gốc gác & Giám định tình trạng xe cũ",
-    description: "Dịch vụ check gốc xe, kiểm tra tình trạng pháp lý, tranh chấp hoặc xe tang vật. Hỗ trợ giám định tình trạng kỹ thuật và định giá xe cũ chính xác trước khi giao dịch.",
+    title: "Kiểm tra gốc gác & Giám định tình trạng pháp lý xe",
+    description: "Check gốc xe ô tô, giám định tình trạng tranh chấp, xe tang vật. Tư vấn sang tên ô tô cần giấy tờ gì để đảm bảo an toàn pháp lý tuyệt đối trước khi mua bán.",
     image: "https://mercedesphumyhung.com.vn/wp-content/uploads/2024/10/audi2.jpg",
     icon: Search
   },
   {
-    id: "cap-doi",
-    title: "Làm lại đăng ký xe bị mất - Cấp lại Cà vẹt xe hỏa tốc",
-    description: "Bạn cần làm lại giấy tờ xe bị mất? Dịch vụ cấp lại đăng ký xe (cà vẹt) bị mất nhanh nhất tại TPHCM. Thủ tục đơn giản, không cần chờ đợi lâu, giao kết quả tận nơi cho khách hàng.",
-    image: "https://images.unsplash.com/photo-1632833239869-a37e3a5806d2?auto=format&fit=crop&q=80&w=800",
-    icon: Repeat
-  },
-  {
-    id: "bao-hiem",
-    title: "Bảo hiểm xe cơ giới & Phí đường bộ hỏa tốc",
-    description: "Cung cấp các loại bảo hiểm bắt buộc TNDS, bảo hiểm thân vỏ (hai chiều) cho ô tô và xe máy. Hỗ trợ đóng phí đường bộ, xử lý bồi thường bảo hiểm nhanh chóng.",
-    image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=800",
-    icon: Shield
-  },
-  {
     id: "dang-kiem",
-    title: "Cà số khung số máy tại nhà & Hỗ trợ Đăng kiểm xe",
-    description: "Cung cấp thợ cà số khung số máy chuyên nghiệp tận nhà tại TP.HCM cho ô tô và xe máy. Hỗ trợ đưa xe đi đăng kiểm, xử lý các lỗi đăng kiểm nhanh chóng, đảm bảo xe lưu hành đúng quy định.",
+    title: "Cà số máy tận nhà & Hỗ trợ Đăng kiểm xe hỏa tốc",
+    description: "Thợ cà số khung số máy chuyên nghiệp tận nơi tại Bình Thạnh và TPHCM. Hỗ trợ đưa xe đi đăng kiểm, xử lý lỗi đăng kiểm, đảm bảo xe lưu hành đúng quy định.",
     image: "https://media.vietnamplus.vn/images/7255a701687d11cb8c6bbc58a6c80785d45dd972489b8630a840aa247a41769c10d29387ecb7ce29b9c4716bcb8e355f7c8ad008c57673c6c1582d78e0e2a8301039b653f7228b0042d704e48349bb259c6b3b4e826641f2a5ff22c7cd96e7c0/5c13378d057c480a8e98c64a413e20613682161636517973.jpg",
     icon: PenTool
   }
@@ -74,38 +74,42 @@ export const SERVICES: ServiceItem[] = [
 export const BLOG_POSTS: BlogPost[] = [
   {
     id: "1",
-    title: "Quy trình sang tên xe ô tô 2025 và lệ phí sang tên xe cũ",
-    summary: "Hướng dẫn chi tiết thủ tục sang tên xe ô tô, xe máy theo Thông tư 24 mới nhất. Cách tính thuế trước bạ sang tên xe cũ và các bước giữ biển số định danh.",
+    title: "Quy trình sang tên ô tô 2025 và chi phí sang tên ô tô thực tế",
+    summary: "Hướng dẫn chi tiết sang tên ô tô cần giấy tờ gì, chi phí sang tên ô tô bao gồm những khoản nào và cách thực hiện sang tên ô tô nhanh nhất theo luật mới.",
     image: "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&q=80&w=800",
     date: "20/02/2025"
   },
   {
     id: "2",
-    title: "Thủ tục rút hồ sơ gốc xe máy, ô tô chuyển vùng tỉnh",
-    summary: "Mua xe tỉnh về TPHCM cần những giấy tờ gì? Dịch vụ rút hồ sơ gốc toàn quốc hướng dẫn quy trình rút hồ sơ xe nhanh nhất để không bị trễ hạn sang tên.",
+    title: "Dịch vụ sang tên ô tô TPHCM: Sang tên ô tô mất bao lâu?",
+    summary: "Giải đáp thắc mắc về thời gian làm thủ tục sang tên xe ô tô sài gòn. Các bước sang tên ô tô trọn gói giúp bạn tiết kiệm thời gian và công sức đi lại.",
     image: "https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&q=80&w=800",
     date: "18/02/2025"
   },
   {
     id: "3",
-    title: "Mất đăng ký xe (cà vẹt) làm lại ở đâu? Thủ tục cấp lại cà vẹt",
-    summary: "Dịch vụ làm lại cà vẹt xe bị mất uy tín tại TPHCM. Hướng dẫn chuẩn bị hồ sơ xin cấp lại giấy tờ xe khi không chính chủ hoặc mất hồ sơ tự quản.",
-    image: "https://cdn.thuvienphapluat.vn/uploads/tintuc/2025/01/07/loi-xe-khong-chinh-chu.jpg",
+    title: "Mất biển số ô tô làm lại ở đâu? Dịch vụ cấp lại biển số ô tô TPHCM",
+    summary: "Thủ tục xin cấp lại biển số ô tô bị mất hoặc bị hỏng. Dịch vụ đổi biển số ô tô tphcm nhanh gọn, lấy biển số mới hỏa tốc trong ngày.",
+    image: "https://images.unsplash.com/photo-1632833239869-a37e3a5806d2?auto=format&fit=crop&q=80&w=800",
     date: "15/02/2025"
   }
 ];
 
 export const FAQ_ITEMS: FaqItem[] = [
   {
-    question: "Dịch vụ sang tên xe ô tô TPHCM giá bao nhiêu?",
-    answer: "Chi phí sang tên xe bao gồm thuế trước bạ 2% (đối với xe cũ), lệ phí biển số và phí dịch vụ làm hồ sơ của SangTenOtoSG. Vui lòng liên hệ để nhận báo giá chi tiết cho từng loại xe."
+    question: "Dịch vụ sang tên ô tô TPHCM trọn gói giá bao nhiêu?",
+    answer: "Chi phí sang tên ô tô bao gồm thuế trước bạ 2% (xe cũ), lệ phí cấp đổi biển số định danh và phí dịch vụ làm hồ sơ xe ô tô của SangTenOtoSG. Vui lòng liên hệ để nhận báo giá chi tiết."
   },
   {
-    question: "Rút hồ sơ gốc xe ô tô mất bao lâu?",
-    answer: "Thời gian rút hồ sơ gốc xe thường từ 5-10 ngày tùy tỉnh thành. SangTenOtoSG có dịch vụ rút hồ sơ gốc hỏa tốc giúp quý khách tiết kiệm thời gian tối đa."
+    question: "Sang tên ô tô mất bao lâu thì xong?",
+    answer: "Thông thường thời gian sang tên ô tô tại TPHCM từ 3-5 ngày làm việc. Nếu sử dụng dịch vụ sang tên ô tô nhanh của chúng tôi, thời gian có thể rút ngắn tối đa tùy theo tình trạng hồ sơ."
   },
   {
-    question: "Làm lại cà vẹt xe bị mất có cần mang xe đến không?",
-    answer: "Đối với dịch vụ làm lại đăng ký xe bị mất tại SangTenOtoSG, chúng tôi hỗ trợ xử lý hồ sơ nhanh gọn, trong nhiều trường hợp khách hàng không cần phải đánh xe đến cơ quan công an."
+    question: "Sang tên ô tô không chính chủ cần giấy tờ gì?",
+    answer: "Đối với trường hợp sang tên ô tô không chính chủ, bạn cần chuẩn bị giấy tờ mua bán (nếu có) hoặc kê khai theo Thông tư 24. SangTenOtoSG sẽ hỗ trợ bạn làm hồ sơ xe ô tô trọn gói để xử lý nhanh nhất."
+  },
+  {
+    question: "Mất biển số ô tô làm lại có nhanh không?",
+    answer: "Dịch vụ cấp lại biển số ô tô tphcm của chúng tôi giúp quý khách nhận biển số mới chỉ sau vài ngày làm việc, thủ tục đơn giản, không cần mang xe đến trực tiếp."
   }
 ];
