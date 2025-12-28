@@ -12,48 +12,41 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service }) => {
   const Icon = service.icon;
 
   return (
-    <div className="group bg-white rounded-[2.5rem] shadow-[0_30px_60px_rgba(0,0,0,0.05)] hover:shadow-[0_50px_100px_rgba(14,165,233,0.15)] transition-all duration-700 overflow-hidden border border-slate-50 flex flex-col h-full hover:-translate-y-4">
-      <div className="relative overflow-hidden h-64 mx-4 mt-4 rounded-[2rem]">
+    <div className="group bg-white rounded-3xl shadow-sm hover:shadow-xl transition-all duration-500 overflow-hidden border border-slate-100 flex flex-col h-full hover:-translate-y-2">
+      <div className="relative overflow-hidden h-48 mx-3 mt-3 rounded-2xl">
         <img 
           src={service.image} 
-          alt={`Dịch vụ ${service.title} - SangTenXe24h`} 
-          className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-[1500ms]"
+          alt={`Dịch vụ ${service.title}`} 
+          className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
           loading="lazy"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent opacity-80 group-hover:opacity-40 transition-opacity"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent"></div>
         
-        {/* Category Badge */}
-        <div className="absolute top-6 left-6">
-          <div className="px-4 py-2 bg-white/20 backdrop-blur-md border border-white/30 rounded-full text-[10px] font-black text-white uppercase tracking-widest">
-            Service 2025
-          </div>
-        </div>
-
         {Icon && (
-          <div className="absolute -bottom-2 right-8 w-16 h-16 bg-sky-500 rounded-[1.5rem] shadow-2xl flex items-center justify-center text-white transform group-hover:-translate-y-4 transition-transform duration-500 z-10 border-4 border-white">
-            <Icon size={28} />
+          <div className="absolute -bottom-1 right-6 w-12 h-12 bg-sky-500 rounded-xl shadow-lg flex items-center justify-center text-white transform group-hover:-translate-y-2 transition-transform duration-500 z-10 border-2 border-white">
+            <Icon size={20} />
           </div>
         )}
       </div>
       
-      <div className="p-10 flex flex-col flex-grow">
-        <h3 className="text-2xl font-black text-slate-900 mb-4 group-hover:text-sky-600 transition-colors line-clamp-2 leading-tight">
+      <div className="p-6 md:p-8 flex flex-col flex-grow">
+        <h3 className="text-lg font-black text-slate-900 mb-3 group-hover:text-sky-600 transition-colors line-clamp-2 leading-snug">
           {service.title}
         </h3>
-        <p className="text-slate-500 text-sm mb-8 line-clamp-3 flex-grow leading-relaxed font-medium">
+        <p className="text-slate-500 text-[13px] mb-6 line-clamp-3 flex-grow leading-relaxed">
           {service.description}
         </p>
         
-        <div className="flex items-center justify-between pt-6 border-t border-slate-50">
+        <div className="flex items-center justify-between pt-5 border-t border-slate-50">
           <Link 
             to={`/dich-vu/${service.id}`}
-            className="inline-flex items-center text-sky-600 font-black hover:text-sky-700 mt-auto self-start gap-2 text-xs uppercase tracking-[0.2em] group/link"
+            className="inline-flex items-center text-sky-600 font-black hover:text-sky-700 mt-auto self-start gap-1.5 text-[10px] uppercase tracking-widest group/link"
           >
-            Khám phá quy trình
-            <ChevronRight size={16} className="transform group-hover/link:translate-x-2 transition-transform" />
+            Quy trình
+            <ChevronRight size={14} className="transform group-hover/link:translate-x-1 transition-transform" />
           </Link>
-          <div className="w-8 h-8 rounded-full bg-slate-50 flex items-center justify-center text-slate-300 group-hover:bg-sky-50 group-hover:text-sky-500 transition-colors">
-            <ArrowRight size={14} />
+          <div className="w-7 h-7 rounded-full bg-slate-50 flex items-center justify-center text-slate-300 group-hover:bg-sky-50 group-hover:text-sky-500 transition-colors">
+            <ArrowRight size={12} />
           </div>
         </div>
       </div>
