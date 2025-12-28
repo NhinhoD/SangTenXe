@@ -29,43 +29,43 @@ export const NAV_ITEMS: NavItem[] = [
 export const SERVICES: ServiceItem[] = [
   {
     id: "sang-ten",
-    title: "Dịch vụ sang tên ô tô trọn gói tại TPHCM nhanh nhất",
-    description: "Bạn đang tìm mua xe cũ sang tên ở đâu? SangTenXe24h cung cấp dịch vụ sang tên xe ô tô sài gòn chuyên nghiệp. Hỗ trợ sang tên ô tô không cần đi lại, giải quyết hồ sơ sang tên ô tô không chính chủ theo quy định mới nhất 2025.",
+    title: "Dịch vụ sang tên ô tô trọn gói tại TPHCM chuyên nghiệp",
+    description: "Bạn đang thắc mắc **sang tên ô tô cần giấy tờ gì**? SangTenXe24h cung cấp **dịch vụ sang tên xe ô tô Sài Gòn** trọn gói từ A-Z. Chúng tôi hỗ trợ xử lý mọi hồ sơ khó như **sang tên ô tô không chính chủ**, sang tên qua nhiều đời chủ theo quy định mới 2025. Cam kết không nợ thuế, không tranh chấp, bàn giao cà vẹt mới tận nhà chỉ sau vài ngày làm việc.",
     image: "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&q=80&w=800", 
     icon: Car
   },
   {
     id: "rut-ho-so",
-    title: "Dịch vụ hồ sơ xe ô tô & Rút hồ sơ gốc toàn quốc hỏa tốc",
-    description: "Chuyên làm hồ sơ xe ô tô, rút hồ sơ gốc xe biển tỉnh về TP.HCM. Dịch vụ rút hồ sơ gốc nhanh chóng, đúng pháp luật, cam kết bàn giao hồ sơ tận tay khách hàng trong 3-5 ngày làm việc.",
+    title: "Dịch vụ rút hồ sơ gốc ô tô toàn quốc hỏa tốc",
+    description: "Bạn cần **rút hồ sơ gốc xe ô tô** để di chuyển từ tỉnh về TPHCM hoặc ngược lại? Chúng tôi chuyên cung cấp **dịch vụ làm hồ sơ xe ô tô** hỏa tốc, rút hồ sơ gốc xe biển tỉnh về Sài Gòn nhanh nhất. Đội ngũ chuyên viên sẽ thay mặt quý khách nộp hồ sơ tại cơ quan công an, xử lý nhanh chóng các lỗi phạt nguội hoặc nợ thuế phí đường bộ.",
     image: "https://images.unsplash.com/photo-1554224155-1696413565d3?auto=format&fit=crop&q=80&w=800", 
     icon: FileText
   },
   {
     id: "bien-so",
-    title: "Cấp lại biển số ô tô & Đổi biển số ô tô TPHCM hỏa tốc",
-    description: "Mất biển số ô tô làm lại ở đâu? Chúng tôi hỗ trợ cấp lại biển số ô tô, đổi biển số xe ô tô sài gòn sang biển định danh, đổi biển số ô tô từ biển vuông sang biển dài hoặc ngược lại theo yêu cầu.",
+    title: "Cấp lại biển số ô tô & Đổi biển số định danh hỏa tốc",
+    description: "**Mất biển số ô tô làm lại ở đâu?** Chúng tôi hỗ trợ **cấp lại biển số ô tô TPHCM** hỏa tốc trong 24h. Ngoài ra, SangTenXe24h còn nhận dịch vụ **đổi biển số xe ô tô Sài Gòn** sang biển định danh, đổi biển số vuông sang biển dài hoặc ngược lại theo Thông tư 24. Thủ tục đơn giản, không cần mang xe trực tiếp đến trụ sở.",
     image: "https://images.unsplash.com/photo-1632833239869-a37e3a5806d2?auto=format&fit=crop&q=80&w=800",
     icon: Hash
   },
   {
     id: "giay-to",
-    title: "Dịch vụ làm giấy tờ xe ô tô Sài Gòn & Cấp lại đăng ký xe",
-    description: "Chuyên dịch vụ giấy tờ xe ô tô, làm lại đăng ký xe ô tô bị mất (cà vẹt) nhanh nhất TPHCM. Xử lý mọi rắc rối về giấy tờ xe ô tô cũ, làm hồ sơ xe ô tô trọn gói giá rẻ.",
+    title: "Dịch vụ giấy tờ xe ô tô Sài Gòn & Cấp lại đăng ký xe",
+    description: "Mất cà vẹt xe ô tô làm lại thế nào? SangTenXe24h chuyên **dịch vụ giấy tờ xe ô tô**, cấp lại đăng ký xe bị mất nhanh chóng nhất tại Bình Thạnh và toàn TPHCM. Chúng tôi giúp bạn chuẩn bị bộ hồ sơ xe ô tô đầy đủ, thay mặt đi nộp hồ sơ, giúp bạn tiết kiệm thời gian và tránh các sai sót không đáng có khi làm thủ tục hành chính.",
     image: "https://cdn.thuvienphapluat.vn/uploads/tintuc/2025/01/07/loi-xe-khong-chinh-chu.jpg",
     icon: Repeat
   },
   {
     id: "giam-dinh",
-    title: "Kiểm tra gốc gác & Giám định tình trạng pháp lý xe",
-    description: "Check gốc xe ô tô, giám định tình trạng tranh chấp, xe tang vật. Tư vấn sang tên ô tô cần giấy tờ gì để đảm bảo an toàn pháp lý tuyệt đối trước khi mua bán.",
+    title: "Giám định pháp lý & Check gốc xe ô tô toàn quốc",
+    description: "Trước khi mua xe cũ, việc **check gốc xe ô tô** là vô cùng quan trọng. Dịch vụ của chúng tôi giúp quý khách giám định tình trạng pháp lý, kiểm tra xem xe có đang tranh chấp, cầm cố ngân hàng hay là tang vật vụ án hay không. Tư vấn sang tên ô tô cần giấy tờ gì để đảm bảo an toàn 100% trước khi xuống tiền giao dịch.",
     image: "https://mercedesphumyhung.com.vn/wp-content/uploads/2024/10/audi2.jpg",
     icon: Search
   },
   {
     id: "dang-kiem",
-    title: "Cà số máy tận nhà & Hỗ trợ Đăng kiểm xe hỏa tốc",
-    description: "Thợ cà số khung số máy chuyên nghiệp tận nơi tại Bình Thạnh và TPHCM. Hỗ trợ đưa xe đi đăng kiểm, xử lý lỗi đăng kiểm, đảm bảo xe lưu hành đúng quy định.",
+    title: "Cà số khung số máy & Hỗ trợ đăng kiểm xe TPHCM",
+    description: "Dịch vụ **thợ cà số khung số máy tận nhà** tại Bình Thạnh, Quận 1, Quận 7... Chuyên nghiệp, sạch sẽ, chuẩn hồ sơ đăng ký. Đồng thời, chúng tôi hỗ trợ đưa xe đi đăng kiểm, xử lý các lỗi kỹ thuật bị từ chối đăng kiểm, đảm bảo xe của bạn luôn lưu hành đúng pháp luật với chi phí rẻ nhất.",
     image: "https://media.vietnamplus.vn/images/7255a701687d11cb8c6bbc58a6c80785d45dd972489b8630a840aa247a41769c10d29387ecb7ce29b9c4716bcb8e355f7c8ad008c57673c6c1582d78e0e2a8301039b653f7228b0042d704e48349bb259c6b3b4e826641f2a5ff22c7cd96e7c0/5c13378d057c480a8e98c64a413e20613682161636517973.jpg",
     icon: PenTool
   }
