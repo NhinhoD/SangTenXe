@@ -2,44 +2,62 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://sangtenotosg.id.vn/</loc>
-    <lastmod>2025-02-21</lastmod>
+    <lastmod>2026-01-06</lastmod>
     <changefreq>always</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://sangtenotosg.id.vn/dich-vu/sang-ten</loc>
-    <lastmod>2025-02-21</lastmod>
+    <loc>https://sangtenotosg.id.vn/gioi-thieu</loc>
+    <lastmod>2026-01-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://sangtenotosg.id.vn/dich-vu</loc>
+    <lastmod>2026-01-06</lastmod>
     <changefreq>daily</changefreq>
-    <priority>0.95</priority>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://sangtenotosg.id.vn/dich-vu/sang-ten</loc>
+    <lastmod>2026-01-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://sangtenotosg.id.vn/dich-vu/rut-ho-so</loc>
-    <lastmod>2025-02-21</lastmod>
+    <lastmod>2026-01-06</lastmod>
     <changefreq>daily</changefreq>
-    <priority>0.95</priority>
+    <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://sangtenotosg.id.vn/dich-vu/cap-doi</loc>
-    <lastmod>2025-02-21</lastmod>
+    <loc>https://sangtenotosg.id.vn/dich-vu/bien-so</loc>
+    <lastmod>2026-01-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://sangtenotosg.id.vn/dich-vu/giay-to</loc>
+    <lastmod>2026-01-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://sangtenotosg.id.vn/tu-van</loc>
+    <lastmod>2026-01-06</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://sangtenotosg.id.vn/blog</loc>
-    <lastmod>2025-02-21</lastmod>
+    <lastmod>2026-01-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://sangtenotosg.id.vn/gioi-thieu</loc>
-    <lastmod>2025-02-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://sangtenotosg.id.vn/lien-he</loc>
-    <lastmod>2025-02-21</lastmod>
+    <lastmod>2026-01-06</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
 </urlset>
