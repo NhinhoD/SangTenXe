@@ -1,19 +1,19 @@
 
 {
-  "name": "SangTenOtoSG - Dịch Vụ Xe Uy Tín",
-  "short_name": "SangTenOtoSG",
+  "name": "SangTenXe24h - Dịch Vụ Xe Uy Tín",
+  "short_name": "SangTenXe24h",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#0ea5e9",
   "icons": [
     {
-      "src": "https://res.cloudinary.com/dfh9gktg8/image/upload/v1766801284/LogoWeb_ukbmgf.png",
+      "src": "https://res.cloudinary.com/dfh9gktg8/image/upload/c_pad,ar_1:1,w_192/v1766801284/LogoWeb_ukbmgf.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "https://res.cloudinary.com/dfh9gktg8/image/upload/v1766801284/LogoWeb_ukbmgf.png",
+      "src": "https://res.cloudinary.com/dfh9gktg8/image/upload/c_pad,ar_1:1,w_512/v1766801284/LogoWeb_ukbmgf.png",
       "sizes": "512x512",
       "type": "image/png"
     }
