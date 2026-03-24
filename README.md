@@ -48,21 +48,6 @@ Dự án website giới thiệu và quảng bá dịch vụ pháp lý xe cơ gi�
 └── index.html           # File HTML gốc tích hợp importmap và Tailwind
 ```
 
-## 🚀 Logic điều hướng đặc biệt
-
-Trong file `App.tsx`, dự án được trang bị một logic đặc biệt để xử lý trải nghiệm người dùng:
-
-```typescript
-useEffect(() => {
-  const params = new URLSearchParams(window.location.search);
-  if (params.has('appParams')) {
-    // Nếu phát hiện tham số điều hướng từ môi trường preview,
-    // ứng dụng sẽ tự động đưa người dùng về trang chủ.
-    navigate('/', { replace: true });
-  }
-}, [navigate]);
-```
-
 ## 📝 Hướng dẫn cập nhật nội dung
 
 Website được thiết kế để không cần can thiệp sâu vào code khi cần thay đổi nội dung:
